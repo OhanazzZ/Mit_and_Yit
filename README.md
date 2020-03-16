@@ -10,3 +10,5 @@ Members are:  Kechen Zhao 957398
 The web app we are creating is a social dining app.
 
 ......
+
+Hi I am Here!

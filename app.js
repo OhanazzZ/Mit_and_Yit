@@ -1,12 +1,17 @@
 const express = require('express');
 const app = express();
 
-//Route for GET method
-//can also define app.post, app.delete, or other HTTP methods
+//import routers
+const userRouter = require('./Routers/userRouter');
+
 app.get('/', (req, res) => {
     //return the response
-    res.send("Welcome to Mit&Yit.");
+    res.send("<H1>Welcome to Mit&Yit.</H1>");
 });
+
+// go through the router first before doing the following
+app.use('/user-management', userRouter);
+
 
 //app.listen() tells express that we want to start a web server on port 8000
 app.listen(8000, () => {

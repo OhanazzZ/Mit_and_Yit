@@ -15,6 +15,7 @@ const getUserByCuisine = (req, res) => {
     }
 };
 
+//update cuisine by name
 const updateCuisineByName = (req, res) => {
     const userInfo = users.find(user => user.name === req.params.name);
     //get the new information from request body
@@ -22,8 +23,16 @@ const updateCuisineByName = (req, res) => {
     res.send(users);
 };
 
+//add new user
+const addUser = (req, res) => {
+    const new_user = req.body;
+    users.push(new_user);
+    res.send(users);
+};
+
 module.exports = {
     getAllUsers,
     getUserByCuisine,
     updateCuisineByName,
+    addUser
 };

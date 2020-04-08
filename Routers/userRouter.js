@@ -15,6 +15,7 @@ usersRouter.get('/:cuisine', (req, res) => {
 
 //update
 usersRouter.post('/:name', userController.updateCuisineByName);
+usersRouter.patch('/', userController.addUser);
 
 //export the router so that app.js can import it
 module.exports = usersRouter;

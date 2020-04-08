@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/GilfoylePP/Mit_and_Yit--INFO30005/issues"
   },
-  "homepage": "https://github.com/GilfoylePP/Mit_and_Yit--INFO30005#readme"
+  "homepage": "https://github.com/GilfoylePP/Mit_and_Yit--INFO30005#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

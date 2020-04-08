@@ -8,9 +8,13 @@ usersRouter.get('/', (req, res) => {
     userController.getAllUsers(req, res);
 });
 
+//get user by cuisine
 usersRouter.get('/:cuisine', (req, res) => {
     userController.getUserByCuisine(req, res);
 });
+
+//update
+usersRouter.post('/:name', userController.updateCuisineByName);
 
 //export the router so that app.js can import it
 module.exports = usersRouter;

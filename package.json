@@ -1,0 +1,19 @@
+{
+  "name": "mit_and_yit--info30005",
+  "version": "1.0.0",
+  "description": "Mit&Yit project for INFO30005",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.git"
+  },
+  "author": "Kechen Zhao, Bin Zhang, Yuan Ye",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GilfoylePP/Mit_and_Yit--INFO30005/issues"
+  },
+  "homepage": "https://github.com/GilfoylePP/Mit_and_Yit--INFO30005#readme"
+}

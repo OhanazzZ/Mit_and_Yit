@@ -23,7 +23,7 @@ usersRouter.get('/register', (req, res) => {
     const password = req.body.password;
     const password2 = req.body.password2;
 
-    req.checkBody('Name', 'Name cannot be empty').nonEmpty();
+    req.checkBody('name', 'Name cannot be empty').nonEmpty();
     req.checkBody('email', 'Email cannot be empty').nonEmpty();
     req.checkBody('email', 'Email is not valid').isEmail();
     req.checkBody('username', 'Username cannot be empty').nonEmpty();
@@ -39,6 +39,7 @@ usersRouter.get('/register', (req, res) => {
     } else {
         res.send('Welcome to Mit&Yit! You have successfully registered ;)')
     }
+
 });
 
 //login form
@@ -52,7 +53,7 @@ usersRouter.get('/:cuisine', (req, res) => {
 });
 
 //update
-usersRouter.post('/:name', userController.updateCuisineByName);
+usersRouter.post('/:username', userController.updateCuisineByName);
 usersRouter.patch('/', userController.addUser);
 
 

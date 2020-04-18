@@ -1,4 +1,5 @@
 
+/*
 var mongoose = require('mongoose');
 
 const uri = "mongodb+srv://Abigail:Zkc20000426@cluster0-av4r4.mongodb.net/test?retryWrites=true&w=majority";
@@ -13,3 +14,4 @@ mongoose.connect(uri,
     });
 
 require('./user.js');
+*/

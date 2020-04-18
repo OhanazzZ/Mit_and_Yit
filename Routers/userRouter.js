@@ -1,6 +1,8 @@
 const express = require('express');
 const usersRouter = express.Router();
 const userController = require("../Controllers/userController");
+const Joi = require('joi');
+
 var users = require('../Models/user');
 
 //Route for GET method

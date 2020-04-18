@@ -11,13 +11,13 @@ const getUserByCuisine = (req, res) => {
         res.send(userInfo);
     }
     else {
-        res.send("No User Found");
+        res.status(404).send("No User Found");
     }
 };
 
 //update cuisine by name
 const updateCuisineByName = (req, res) => {
-    const userInfo = users.find(user => user.name === req.params.name);
+    const userInfo = users.find(user => user.username === req.params.name);
     //get the new information from request body
     userInfo.cuisine = req.body.cuisine;
     res.send(users);

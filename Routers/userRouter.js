@@ -50,13 +50,14 @@ usersRouter.get('/login', (req, res) => {
 });
 
 //get user by cuisine
-usersRouter.get('/:cuisine', (req, res) => {
+usersRouter.get('/select/:cuisine', (req, res) => {
     userController.getUserByCuisine(req, res);
 });
 
-//update
-usersRouter.post('/:username', userController.updateCuisineByName);
-usersRouter.patch('/', userController.addUser);
+//update, add and delete
+usersRouter.post('/add', userController.addUser);
+usersRouter.post('/update/:username', userController.updateCuisineByName);
+usersRouter.delete('/delete/:username', userController.deleteUser);
 
 
 //export the router so that app.js can import it

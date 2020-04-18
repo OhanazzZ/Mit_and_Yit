@@ -17,7 +17,7 @@ const getUserByCuisine = (req, res) => {
 
 //update cuisine by name
 const updateCuisineByName = (req, res) => {
-    const userInfo = users.find(user => user.username === req.params.name);
+    const userInfo = users.find(user => user.username === req.params.username);
     //get the new information from request body
     userInfo.cuisine = req.body.cuisine;
     res.send(users);
@@ -30,9 +30,23 @@ const addUser = (req, res) => {
     res.send(users);
 };
 
+//delete user
+const deleteUser = (req, res) => {
+    const userInfo = users.find(user => user.username === req.params.username);
+    if (!userInfo) {
+        res.status(404).send("No User Found");
+    }
+    else {
+        const name = users.indexOf(userInfo);
+        users.splice(name, 1);
+        res.send(users);
+    }
+};
+
 module.exports = {
     getAllUsers,
     getUserByCuisine,
     updateCuisineByName,
-    addUser
+    addUser,
+    deleteUser
 };

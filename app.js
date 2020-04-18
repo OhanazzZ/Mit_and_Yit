@@ -11,6 +11,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 //pass the body first before router
+app.use(express.json());
 app.use(bodyParser.json()); //accept Json
 app.use(bodyParser.urlencoded({extended: true})); //accept url
 

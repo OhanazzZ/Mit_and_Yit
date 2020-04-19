@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-const mongoose  = require('mongoose');
+//const mongoose  = require('mongoose');
 
 
 require('./models/db.js');
@@ -34,9 +34,13 @@ app.use('/user/:name', userRouter);
 
 
 //environment variable PORT
-const port = process.env.PORT || 8000;
+/*const port = process.env.PORT || 8000;
 
 //app.listen() tells express that we want to start a web server on port 8000
 app.listen(port, () => {
     console.log('Mit&Yit is currently launching...')
+});*/
+
+app.listen(process.env.PORT || 8000, function(){
+    console.log("Mit&Yit is currently launching, server listening on port %d in %s mode...", this.address().port, app.settings.env);
 });

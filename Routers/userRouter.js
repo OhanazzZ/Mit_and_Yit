@@ -1,9 +1,9 @@
 const express = require('express');
 const usersRouter = express.Router();
 const userController = require("../Controllers/userController");
-const Joi = require('joi');
+//const Joi = require('joi');
 
-var users = require('../Models/user');
+//var users = require('../Models/user');
 
 //Route for GET method
 //can also define app.post, app.delete, or other HTTP methods
@@ -18,7 +18,7 @@ usersRouter.get('/register', (req, res) => {
 });
 
 //register process
-usersRouter.get('/register', (req, res) => {
+/*usersRouter.get('/register', (req, res) => {
     const name = req.body.name;
     const email = req.body.email;
     const username = req.body.username;
@@ -42,6 +42,10 @@ usersRouter.get('/register', (req, res) => {
         res.send('Welcome to Mit&Yit! You have successfully registered ;)')
     }
 
+});*/
+
+usersRouter.get('/register', (req, res) => {
+    res.render('register');
 });
 
 //login form

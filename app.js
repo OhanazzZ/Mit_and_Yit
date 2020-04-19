@@ -5,7 +5,7 @@ const app = express();
 //const mongoose  = require('mongoose');
 
 
-require('./models/db.js');
+//require('./models/db.js');
 
 //load view engine
 app.set('views', path.join(__dirname, 'views'));

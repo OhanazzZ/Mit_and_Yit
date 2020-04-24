@@ -1,3 +1,8 @@
+/*function User(username, cuisine){
+    this.username = username;
+    this.cuisine = cuisine;
+}*/
+
 const user = [
     {"username": "Abigail",
         "cuisine": "Japanese"},

@@ -55,12 +55,14 @@ function onSubmit(e){
         setTimeout(() => msg.remove(), 3000)
     }else{
         const li = document.createElement('li');
-        li.appendChild(document.createTextNode(`${nameInput.value} : ${cuisineInput.value}`))
+        li.appendChild(document.createTextNode(`${nameInput.value} : ${cuisineInput.value}`));
         userList.appendChild(li);
 
+        //user.user.push(user.User(nameInput.value, cuisineInput.value));
         // Clear fields
         nameInput.value = '';
         cuisineInput.value = '';
     }
 
 }
+

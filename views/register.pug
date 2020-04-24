@@ -1,17 +1,31 @@
-extends layout
+doctype html
+head
 
-block content
-    h1 Register
-    form(method = 'POST', action = '/user/register')
-        label Name:
-        input.form-control(name = 'name', type = 'text')
-        label Email:
-        input.form-control(name = 'email', type = 'text')
-        label Username:
-        input.form-control(name = 'username', type = 'text')
-        label Password:
-        input.form-control(name = 'password', type = 'password')
-        label Confirm:
-        input.form-control(name = 'password2', type = 'password')
-    br
-    input.btn.btm-primary(type = 'submit', value = 'Submit')
+    style
+        include registerStyle.css
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible' content='ie=edge')
+    title Mit&amp;Yit
+header
+    h1 Welcome to Mit&amp;Yit ;)
+section.container
+    form#my-form
+        h1 Register
+        .msg
+        div
+            label(for='username') Username:
+            input#username(type='text')
+        div
+            label(for='cuisine') Cuisine:
+            input#cuisine(type='text')
+        input.btn(type='submit' value='submit')
+    ul#users
+    //
+      <ul class="items">
+      <li class="item">Item 1</li>
+      <li class="item">Item 2</li>
+      <li class="item">Item 3</li>
+      </ul>
+    script
+        include ../Routers/main1.js

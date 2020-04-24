@@ -42,16 +42,13 @@ usersRouter.get('/register', (req, res) => {
         res.send('Welcome to Mit&Yit! You have successfully registered ;)')
     }
 
-});*/
-
-usersRouter.get('/register', (req, res) => {
-    res.render('register');
-});
-
+*/
 //login form
 usersRouter.get('/login', (req, res) => {
     res.render('login');
 });
+
+
 
 //get user by cuisine
 usersRouter.get('/select/:cuisine', (req, res) => {

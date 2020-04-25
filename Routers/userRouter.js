@@ -60,6 +60,11 @@ usersRouter.post('/add', userController.addUser);
 usersRouter.post('/update/:username', userController.updateCuisineByName);
 usersRouter.delete('/delete/:username', userController.deleteUser);
 
+//review system
+usersRouter.post('/update_review', userController.updateUserReview);
+usersRouter.get('/get_review/:review', userController.getUserByReview);
+usersRouter.get('/best', userController.getBestUser);
+
 
 //export the router so that app.js can import it
 module.exports = usersRouter;

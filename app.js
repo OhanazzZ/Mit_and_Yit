@@ -26,10 +26,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //import routers
 const userRouter = require('./Routers/userRouter');
+const reviewRouter = require('./Routers/reviewRouter');
 
 // go through the router first before doing the following
 app.use('/user', userRouter);
 app.use('/user/:name', userRouter);
+
+app.use('/review', reviewRouter);
+
+//review system
 
 
 

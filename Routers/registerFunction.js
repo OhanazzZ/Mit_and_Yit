@@ -41,7 +41,7 @@ const nameInput = document.querySelector('#username');
 const cuisineInput = document.querySelector('#cuisine');
 const msg = document.querySelector('.msg');
 const userList = document.querySelector('#users');
-
+//const user = require('../Models/user');
 myForm.addEventListener('submit', onSubmit);
 
 function onSubmit(e){

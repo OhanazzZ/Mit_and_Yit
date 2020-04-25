@@ -5,16 +5,44 @@
 
 const user = [
     {"username": "Abigail",
-        "cuisine": "Japanese"},
+        "cuisine": "Japanese",
+        "review": "2"},
     {"username": "Sam",
-        "cuisine": "Spanish"},
+        "cuisine": "Spanish",
+        "review": "4"},
     {"username": "Estella",
-        "cuisine": "Chinese"},
+        "cuisine": "Chinese",
+        "review": "5"},
     {"username": "Florence",
-        "cuisine": "Italian"}
+        "cuisine": "Italian",
+        "review": "3"},
+    {"username": "Marie",
+        "cuisine": "Italian",
+        "review": "1"},
+    {"username": "Paul",
+        "cuisine": "Korean",
+        "review": "3"},
+    {"username": "Kathy",
+        "cuisine": "Japanese",
+        "review": "4"},
+    {"username": "Alice",
+        "cuisine": "Chinese",
+        "review": "5"},
+    {"username": "Bill",
+        "cuisine": "Spanish",
+        "review": "4"}
 ];
 
 module.exports = user;
+
+/*
+class User {
+    constructor(username, cuisine) {
+        this.username = username;
+        this.cuisine = cuisine;
+    }
+}*/
+
 
 
 /*

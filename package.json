@@ -1,29 +1,14 @@
 {
-  "name": "mit_and_yit--info30005",
+  "name": "my_mit_yit",
   "version": "1.0.0",
-  "description": "Mit&Yit project for INFO30005",
+  "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.git"
-  },
-  "author": "Kechen Zhao, Bin Zhang, Yuan Ye",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/GilfoylePP/Mit_and_Yit--INFO30005/issues"
-  },
-  "homepage": "https://github.com/GilfoylePP/Mit_and_Yit--INFO30005#readme",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "joi": "^14.3.1",
-    "mongoose": "^5.9.9",
-    "passport": "^0.4.1",
-    "passport-local": "^1.0.0",
-    "pug": "^2.0.4"
+    "express": "^4.17.1"
   }
 }

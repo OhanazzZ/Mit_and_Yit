@@ -8,5 +8,6 @@ reviewRouter.get('/:id', reviewController.reviewWrittenToUserId);
 // write a review to the user identifiable by the provided ID
 reviewRouter.post('/:id', reviewController.writeReviewToUserId);
 
-
+// write a review to the user identifiable by the provided ID
+reviewRouter.patch('/:writerid/:receiverid', reviewController.updateReview);
 module.exports = reviewRouter;

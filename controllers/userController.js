@@ -17,11 +17,9 @@ const getUserByID = (req, res) => {
         )}
 };
 
-// PATCH request - modify an user by id
-const updateUser = (req, res) => {
+// PATCH request - modify an user's information by id
+const updateUserByID = (req, res) => {
     const new_user = req.body;
-  
-    // search for user in the database via ID
     const user = users.find(user => user.id === parseInt(req.params.id));
     if (!user) {
         res.status(400).send(
@@ -42,10 +40,9 @@ const addUser = (req, res) => {
 };
 
 
-// remember to export the functions
 module.exports = {
   getAllUsers,
   getUserByID,
-  updateUser,
+  updateUserByID,
   addUser,
 };

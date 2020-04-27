@@ -1,21 +1,39 @@
 var users = require("../models/Users");
 var reviews = require("../models/Review");
 
-// GET request - get reviews for an user by user id
-const getReviewById = (req, res) => {
-    const userInfo = users.find(user => user.id === parseInt(req.params.id));
-    res.send({"user" : userInfo.username ,"has reviews": reviews[userInfo.reviewIndex]});
+// GET request - get reviews written to the user identifiable by the provided ID
+const reviewWrittenToUserId = (req, res) => {
+    const user = users.find(user => user.id === parseInt(req.params.id));
+    if (!user){
+        return res.status(400).send(
+            {msg: `No user with the id of ${req.params.id}`}
+        )
+    }
+    
+    res.send({
+        "user" : user.username ,
+        "has reviews": reviews[user.reviewIndex]
+    });
 };
 
-// POST request - post a review as an user by user id
-// const updateReviewById = (req, res) => {
-//     const userInfo = users.find(user => user.id === parseInt(req.params.id));
-//     const newReview = req.body.review;
-//     reviews[userInfo.reviewIndex].review.push(newReview);
-//     res.send("The reviews for user " + userInfo.username + " are " + JSON.stringify(reviews[userInfo.reviewIndex]));
-// };
+// POST request - write a review to the user identifiable by the provided ID
+const writeReviewToUserId = (req, res) => {
+    const user = users.find(user => user.id === parseInt(req.params.id));
+    if (!user){
+        return res.status(400).send(
+            {msg: `No user with the id of ${req.params.id}`}
+        )
+    }
+
+    reviews[user.reviewIndex].review.push(req.body);
+    res.send({
+        "user": user.username, 
+        "has reviews": reviews[user.reviewIndex]
+    });
+};
+
 
 module.exports = {
-    getReviewById,
-    //updateReviewById,
+    reviewWrittenToUserId,
+    writeReviewToUserId,
 };

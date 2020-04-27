@@ -1,23 +1,19 @@
 const express = require("express");
-
-// create router
 const userRouter = express.Router();
-
-// load/import the user controller
 const userController = require("../controllers/userController.js");
 
 
-// handle the GET request to get all users
+// get all users
 userRouter.get("/info", userController.getAllUsers);
 
-// handle the GET request to get an user by ID
+// get an user by id
 userRouter.get("/info/:id", userController.getUserByID);
 
-// handle the PATCH request to update an user
-userRouter.patch("/info/:id", userController.updateUser);
+// modify an user's information by id
+userRouter.patch("/info/:id", userController.updateUserByID);
 
-// handle the POST request to add an user
+// add an user
 userRouter.post("/signup", userController.addUser);
 
-// export the router
+
 module.exports = userRouter;

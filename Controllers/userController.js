@@ -7,7 +7,7 @@ const getAllUsers = (req, res) => {
 
 // GET request - get an user by id
 const getUserByID = (req, res) => {
-    const user = users.find(user => user.id == req.params.id);
+    const user = users.find(user => user.id === parseInt(req.params.id));
 
     if (user) {
         res.send(user);
@@ -22,7 +22,7 @@ const updateUser = (req, res) => {
     const new_user = req.body;
   
     // search for user in the database via ID
-    const user = users.find(user => user.id == req.params.id);
+    const user = users.find(user => user.id === parseInt(req.params.id));
     if (!user) {
         res.status(400).send(
             {msg: `No user with the id of ${req.params.id}`}
@@ -35,7 +35,7 @@ const updateUser = (req, res) => {
   
 // POST request - add an user
 const addUser = (req, res) => {
-    const newUser = Object.assign({id: users.length}, req.body)
+    const newUser = Object.assign({id: users.length}, req.body);
 
     users.push(newUser);
     res.send(users);

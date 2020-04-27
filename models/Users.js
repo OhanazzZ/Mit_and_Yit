@@ -7,6 +7,7 @@ let users = [
         lunch  : true,
         dinner  : true,
         coffee_lightMeal : true,
+        reviewIndex: 0,
     },
     {
         id:2,
@@ -16,6 +17,7 @@ let users = [
         lunch  : true,
         dinner  : false,
         coffee_lightMeal : true,
+        reviewIndex: 1,
     },
     {
         id:3,
@@ -25,6 +27,7 @@ let users = [
         lunch  : true,
         dinner  : true,
         coffee_lightMeal : false,
+        reviewIndex: 2,
     },
     {
         id:4,
@@ -34,6 +37,7 @@ let users = [
         lunch  : false,
         dinner  : true,
         coffee_lightMeal : true,
+        reviewIndex: 3,
     },
     {
         id:5,
@@ -43,6 +47,7 @@ let users = [
         lunch  : false,
         dinner  : true,
         coffee_lightMeal : true,
+        reviewIndex: 4,
     },
     {
         id:6,
@@ -52,6 +57,7 @@ let users = [
         lunch  : true,
         dinner  : false,
         coffee_lightMeal : true,
+        reviewIndex: 5,
     },
     {
         id:7,
@@ -61,6 +67,7 @@ let users = [
         lunch  : true,
         dinner  : true,
         coffee_lightMeal : false,
+        reviewIndex: 6,
     },
     {
         id:8,
@@ -70,7 +77,18 @@ let users = [
         lunch  : true,
         dinner  : true,
         coffee_lightMeal : true,
+        reviewIndex: 7,
+    },
+    {
+        id:9,
+        username : "user9",
+        email : "email_9@gmail.com",
+        cuisine : "Chinese",
+        lunch  : true,
+        dinner  : true,
+        coffee_lightMeal : true,
+        reviewIndex: 8,
     }
-]
+];
 
-module.exports = users
+module.exports = users;

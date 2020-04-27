@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 });
 
 
-const userRouter = require('./routes/userRouter.js')
+const userRouter = require('./routes/userRouter.js');
 const matchRouter = require('./routes/matchRouter.js');
 const reviewRouter = require('./routes/reviewRouter.js');
 

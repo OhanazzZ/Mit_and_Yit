@@ -8,11 +8,11 @@ const findMatch = (req, res) => {
         const userInfo = user[i];
         if (userInfo.cuisine === targetUser.cuisine || userInfo.dinner === targetUser.dinner ||
         userInfo.lunch === userInfo.lunch || userInfo.coffee_lightMeal === targetUser.coffee_lightMeal) {
-            matchedGroup.push(userInfo);
+            matchedGroup.push({user:userInfo.id, email:userInfo.email});
         }
     }
     if (matchedGroup.length !== 0) {
-        res.send("The matched users are the following: " + JSON.stringify(matchedGroup));
+        res.send("The matched users are the following: \n" + JSON.stringify(matchedGroup));
     }
     else {
         res.status(404).send("No User Found");
@@ -35,7 +35,7 @@ const matchUserByCuisine = (req, res) => {
     for (i = 0; i < user.length; i++) {
         const userInfo = user[i];
         if (userInfo.cuisine === req.params.cuisine) {
-            userGroup.push(userInfo);
+            userGroup.push({user:userInfo.id, email: userInfo.email});
         }
     }
     if (userGroup.length !== 0) {

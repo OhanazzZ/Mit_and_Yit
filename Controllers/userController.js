@@ -35,7 +35,7 @@ const updateUser = (req, res) => {
   
 // POST request - add an user
 const addUser = (req, res) => {
-    const newUser = Object.assign({id: users.length}, req.body);
+    const newUser = Object.assign({id: users.length + 1}, req.body);
 
     users.push(newUser);
     res.send(users);

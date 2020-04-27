@@ -4,7 +4,7 @@ var reviews = require("../models/Review");
 // GET request - get reviews for an user by user id
 const getReviewById = (req, res) => {
     const userInfo = users.find(user => user.id === parseInt(req.params.id));
-    res.send("The reviews for user " + userInfo.username + " are " + JSON.stringify(reviews[userInfo.reviewIndex]));
+    res.send({"user" : userInfo.username ,"has reviews": reviews[userInfo.reviewIndex]});
 };
 
 // POST request - post a review as an user by user id

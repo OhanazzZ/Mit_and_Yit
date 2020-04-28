@@ -4,14 +4,14 @@ reviews = [
         scoreNum:2,
         review:[
             {
-                givenBy: "user1",
+                givenBy:2,
                 date:"03-04-2019",
                 score:4,
                 tag:["nice","interesting"],
                 comment: "really nice and kind",
             },
             {
-                givenBy: "user7",
+                givenBy:7,
                 date:"09-04-2019",
                 score:3,
                 tag:["boring","kind"],
@@ -25,21 +25,21 @@ reviews = [
         scoreNum:3,
         review:[
             {
-                givenBy: "user4",
+                givenBy: 4,
                 date:"03-09-2019",
                 score:3,
                 tag:["bad attitude","rude"],
                 comment:"not on time and talk disrespectfully",
             },
             {
-                givenBy: "user3",
+                givenBy: 3,
                 date:"03-09-2019",
                 score:5,
                 tag:["punctual","out-going"],
                 comment: "interesting date",
             },
             {
-                givenBy: "user2",
+                givenBy: 9,
                 date: "12-06-2019",
                 score: 4,
                 tag:["kind","humorous"],
@@ -53,7 +53,7 @@ reviews = [
         scoreNum:1,
         review:[
             {
-                givenBy: "user5",
+                givenBy: 5,
                 date:"09-08-2019",
                 score: 2,
                 tag:["sensitive","mean"],
@@ -67,14 +67,14 @@ reviews = [
         scoreNum:2,
         review:[
             {
-                givenBy: "user9",
+                givenBy: 9,
                 date:"09-08-2019",
                 score: 4,
                 tag:["sincere","reliable"],
                 comment: "she listens to my troubles carefully and gives me really useful suggestion",
             },
             {
-                givenBy: "user6",
+                givenBy: 6,
                 date:"19-04-2019",
                 score: 2,
                 tag:["nice","gentle"],
@@ -88,7 +88,7 @@ reviews = [
         scoreNum:1,
         review:[
             {
-                givenBy: "user5",
+                givenBy: 4,
                 date: "09-11-2019",
                 score: 2,
                 tag: ["depressing", "boring"],
@@ -102,7 +102,7 @@ reviews = [
         scoreNum:1,
         review:[
             {
-                givenBy: "user7",
+                givenBy: 7,
                 date: "09-11-2019",
                 score: 5,
                 tag:["helpful","punctual"],
@@ -116,21 +116,21 @@ reviews = [
         scoreNum:3,
         review:[
             {
-                givenBy: "user3",
+                givenBy: 3,
                 date: "29-11-2019",
                 score: 5,
                 tag:["energetic","out-going"],
                 comment: "xx is really good at sharing her own ideas",
             },
             {
-                givenBy: "user5",
+                givenBy: 1,
                 date: "29-11-2019",
                 score: 3,
                 tag:["easy-going","fun"],
                 comment: "we have many common interests and ideas",
             },
             {
-                givenBy: "user6",
+                givenBy: 6,
                 date: "31-08-2019",
                 score: 4,
                 tag:["interesting","careful"],
@@ -144,14 +144,14 @@ reviews = [
         scoreNum:2,
         review:[
             {
-                givenBy: "user9",
+                givenBy: 9,
                 date: "02-02-2019",
                 score: 5,
                 tag:["creative","attractive"],
                 comment: "we made a great dinner data",
             },
             {
-                givenBy: "user3",
+                givenBy: 3,
                 date: "03-11-2019",
                 score: 3,
                 tag:["nice","gentle"],
@@ -165,28 +165,28 @@ reviews = [
         scoreNum:4,
         review:[
             {
-                givenBy: "user4",
+                givenBy: 4,
                 date: "12-09-2019",
                 score: 5,
                 tag:["punctual","humorous"],
                 comment: "xxx is on time and we have a fun date"
             },
             {
-                givenBy: "user8",
+                givenBy: 8,
                 date: "25-10-2019",
                 score: 5,
                 tag:["kind","humorous"],
                 comment: "xxx is very fun and gentle"
             },
             {
-                givenBy: "user2",
+                givenBy: 2,
                 date: "31-01-2019",
                 score: 2,
                 tag:["moody","selfish"],
                 comment: "he would't pay for half of bill, really disappointed",
             },
             {
-                givenBy: "user1",
+                givenBy: 1,
                 date: "30-05-2019",
                 score: 4,
                 tag:["perfect","sincere"],

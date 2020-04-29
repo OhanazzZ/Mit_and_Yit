@@ -14,7 +14,7 @@ Deliverable 2 descrpition:
 
 The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005
 The URL to the live website is https://mityit.herokuapp.com.
-The commit id is …..
+The commit id is 8308318
 
 
 Three core functionalities, users system, matching system and review system, have been implemented separately by using three routers. Detailed descriptions are listed below. 

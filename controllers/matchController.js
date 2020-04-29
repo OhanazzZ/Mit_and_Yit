@@ -46,7 +46,7 @@ const ByCuisine = (req, res) => {
     res.send(matches);
 };
 
-// Get request - find matches for an user by cuisine
+// Get request - find matches for an user by availability
 const ByAvailability = (req, res) => {
     const targetUser = users.find(user => user.id === parseInt(req.params.id));
     if (!targetUser){

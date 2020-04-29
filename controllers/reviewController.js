@@ -35,32 +35,6 @@ const writeReviewToUserId = (req, res) => {
     });
 };
 
-/* const updateReview = (req, res) =>{
-    const receiver = users.find(user => user.id === parseInt(req.params.receiverid));
-    const writter = users.find(user => user.id === parseInt(req.params.writterid));
-    if (!writter){
-        return res.status(400).send(
-            {msg: `No user with the id of ${req.params.writterid}`}
-        )
-    }
-    if (!receiver){
-        return res.status(400).send(
-            {msg: `No user with the id of ${req.params.receiverid}`}
-        )
-    }
-
-    reviews[receiver.reviewIndex].review.forEach(review => {
-        if (review.givenBy === writter.id){
-            Object.assign(review, req.body)
-        }
-    })
-    
-    res.send({
-        "user": receiver.username, 
-        "has reviews": reviews[receiver.reviewIndex]
-    });
-}
- */
 
  //PATCH request - update an exisiting review to the user identifiable by the provided ID
  const updateReview = (req, res) => {

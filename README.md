@@ -17,7 +17,7 @@ The URL to the live website is https://mityit.herokuapp.com.
 The commit id is **8308318** (**_please update this after the final commit_**).  
 
 
-Three core functionalities, users system, matching system and review system, have been implemented separately by using three routers. Detailed descriptions are listed below. 
+Three core functionalities, **user profile**, **matching system** and **review system**, have been implemented separately by using three routers. Detailed descriptions are listed below. 
 
 Below is the data structure for users. Currently our database has users with id 1~9.  
 ```markdown

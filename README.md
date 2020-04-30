@@ -76,9 +76,9 @@ Input JSON file:
   "reviewIndex":      int  
 }  
 ```
-E.g  
-Url to test: https://mityit.herokuapp.com/user/info/7  
-Original information:  
+&emsp;&emsp;  E.g  
+&emsp;&emsp;  Url to test: https://mityit.herokuapp.com/user/info/7  
+&emsp;&emsp;  Original information:  
 ```
 {  
   "id":               7,  
@@ -91,7 +91,7 @@ Original information:
   "reviewIndex":      6  
 },
 ```
-Make changes(JSON code to test):  
+&emsp;&emsp;  Make changes(JSON code to test):  
 ```
 {   
   "id":               7,  
@@ -148,5 +148,4 @@ Input JSON file:
 ```
 
 * https://mityit.herokuapp.com/review/:id : a **PATCH** request that modeify an existing review to the user identifiable by the provided ID  
-
-* Input JSON file: the same data structure as review **POST** request  
+Input JSON file: the same data structure as review **POST** request  

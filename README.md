@@ -133,9 +133,9 @@ In matching system, a user can find all suitable partners that matches him/her b
 
 Router for review system allows to find reviews, edit existing review and upload new review for a specific user.
 
-* https://mityit.herokuapp.com/review/:id : a **GET** request that get reviews written to the user identifiable by the provided ID
+* https://mityit.herokuapp.com/review/:id : a **GET** request that get reviews written to the user identifiable by the provided ID  
 
-* https://mityit.herokuapp.com/review/:id : a **POST** request that write a new review to the user identifiable by the provided ID 
+* https://mityit.herokuapp.com/review/:id : a **POST** request that write a new review to the user identifiable by the provided ID  
 Input JSON file:  
 ```
 {  
@@ -147,5 +147,5 @@ Input JSON file:
 }
 ```
 
-* https://mityit.herokuapp.com/review/:id : a **PATCH** request that modeify an existing review to the user identifiable by the provided ID  
+* https://mityit.herokuapp.com/review/:id : a **PATCH** request that modeify an existing review to the user identifiable by the provided ID 
 Input JSON file: the same data structure as review **POST** request  

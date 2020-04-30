@@ -1,17 +1,15 @@
-Hello,
+# Welcome to Mit & Yit
 
-We are in Monday 2pm workshop. 
+We are in the **Monday 2 pm** workshop.
 
-Our team name: Mit & Yit
-
-Members are:  
+Members:  
 * Kechen Zhao 957398  
 * Bin Zhang   895427  
 * Yuan Ye     980728  
 
 The web app we are creating is a social dining app.
 
-Deliverable 2 descrpition:
+## Deliverable 2 descrpition:
 
 The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.  
 The URL to the live website is https://mityit.herokuapp.com.  
@@ -56,7 +54,7 @@ Exapmle of data structure in Review data: The below data is the review for user 
 }  
 ```
 
-1. Users' information system (userRouter)
+### 1. Users' information system (userRouter)
 
 Our first core functionality is user system. It allows to view all users’ information, extract an existing user's information, modify existing user's information, and add new user to json file.  
 
@@ -120,7 +118,7 @@ Input JSON file:
 }  
 ```
 
-2. Matching Systen (matchRouter)
+### 2. Matching Systen (matchRouter)
 
 In matching system, a user can find all suitable partners that matches him/her based on either cuisine preference or time availability.
 
@@ -131,7 +129,7 @@ In matching system, a user can find all suitable partners that matches him/her b
 * https://mityit.herokuapp.com/match/find_availability/:id : a **GET** request that find matches for a user by availability  
 
   
-3. Review System (reviewRouter)
+### 3. Review System (reviewRouter)
 
 Router for review system allows to find reviews, edit existing review and upload new review for a specific user.
 

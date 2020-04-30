@@ -147,6 +147,6 @@ Input JSON file:
 }
 ```
 
-* https://mityit.herokuapp.com/review/:id : a PATCH request that modeify an existing review to the user identifiable by the provided ID  
+* https://mityit.herokuapp.com/review/:id : a **PATCH** request that modeify an existing review to the user identifiable by the provided ID  
 
-* Input JSON file: the same data structure as review POST request  
+* Input JSON file: the same data structure as review **POST** request  

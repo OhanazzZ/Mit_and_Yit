@@ -6,13 +6,13 @@ const userController = require("../controllers/userController.js");
 // get all users (tested)
 userRouter.get("/info", userController.getAllUsers);
 
-// get an user by id (tested)
+// get a user by id (tested)
 userRouter.get("/info/:id", userController.getUserByID);
 
-// modify an user's information by id (tested)
+// modify a user's information by id (tested)
 userRouter.patch("/info/:id", userController.updateUserByID);
 
-// add an user (tested)
+// add a user (tested)
 userRouter.post("/signup", userController.addUser);
 
 

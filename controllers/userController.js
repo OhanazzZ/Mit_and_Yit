@@ -5,7 +5,7 @@ const getAllUsers = (req, res) => {
     res.json(users); 
 };
 
-// GET request - get an user by id
+// GET request - get a user by id
 const getUserByID = (req, res) => {
     const user = users.find(user => user.id === parseInt(req.params.id));
 
@@ -17,7 +17,7 @@ const getUserByID = (req, res) => {
         )}
 };
 
-// PATCH request - modify an user's information by id
+// PATCH request - modify aa user's information by id
 const updateUserByID = (req, res) => {
     const new_user = req.body;
     const user = users.find(user => user.id === parseInt(req.params.id));
@@ -31,7 +31,7 @@ const updateUserByID = (req, res) => {
     res.send(user);
   };
   
-// POST request - add an user
+// POST request - add a user
 const addUser = (req, res) => {
     const newUser = Object.assign({id: users.length + 1}, req.body);
 

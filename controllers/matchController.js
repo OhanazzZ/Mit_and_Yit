@@ -1,6 +1,6 @@
 var users = require("../models/Users");
 
-// GET request - find matches for an user
+// GET request - find matches for a user
 const findMatch = (req, res) => {
     const targetUser = users.find(user => user.id === parseInt(req.params.id));
     if (!targetUser){
@@ -27,7 +27,7 @@ const findMatch = (req, res) => {
 };
 
 
-// Get request - find matches for an user by cuisine
+// Get request - find matches for a user by cuisine
 const ByCuisine = (req, res) => {
     const targetUser = users.find(user => user.id === parseInt(req.params.id));
     if (!targetUser){
@@ -46,7 +46,7 @@ const ByCuisine = (req, res) => {
     res.send(matches);
 };
 
-// Get request - find matches for an user by availability
+// Get request - find matches for a user by availability
 const ByAvailability = (req, res) => {
     const targetUser = users.find(user => user.id === parseInt(req.params.id));
     if (!targetUser){

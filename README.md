@@ -32,23 +32,23 @@ Below is the data structure for users. Currently our database has users with id 
     "reviewIndex":      int      //a unique index position that help to retrieve user's review from the Review database  
 }  
 ```
-Below is an exapmle of the data structure for reviews, which shows a review for user id 1, which is at index 0 position.   
+Below is an exapmle of the data structure for reviews, which shows the review for user id 1, which is at index 0 position.   
 ```
 {  
    score:    3.5, //int, average score calculated based on all reviews  
    scoreNum: 2,   //int, number of review messages received  
    review:        //an array that store all review messages  
         [{  
-          givenBy:2,  
-          date:"03-04-2019",  
-          tag:["nice","interesting"],  
+          givenBy: 2,  
+          date:    "03-04-2019",  
+          tag:     ["nice","interesting"],  
           comment: "really nice and kind",  
          },  
          {  
-          givenBy:7,  
-          date:"09-04-2019",  
-          score:3,  
-          tag:["boring","kind"],  
+          givenBy: 7,  
+          date:    "09-04-2019",  
+          score:   3,  
+          tag:     ["boring","kind"],  
           comment: "xx is nice but we have no common interest",  
          }]  
 }  
@@ -58,22 +58,22 @@ Below is an exapmle of the data structure for reviews, which shows a review for 
 
 Our first core functionality is user system. It allows to view all users’ information, extract an existing user's information, modify existing user's information, and add new user to json file.  
 
-* https://mityit.herokuapp.com/user/info : a **GET** request that retrieve all users' information  
+* https://mityit.herokuapp.com/user/info : a **GET** request that retrieves all users' information  
 
-* https://mityit.herokuapp.com/user/info/:id : a **GET** request that retrieve a particular user's information by id  
+* https://mityit.herokuapp.com/user/info/:id : a **GET** request that retrieves a particular user's information by id  
 
-* https://mityit.herokuapp.com/user/info/:id : a **PATCH** request that update an exisiting user's information by id  
+* https://mityit.herokuapp.com/user/info/:id : a **PATCH** request that updates an exisiting user's information by id  
 Input JSON file: 
 ```
 {  
-  "id": int,  
-  "username": String,  
-  "email": String,  
-  "cuisine": String,  
-  "lunch": Boolean,  
-  "dinner": Boolean,  
+  "id":               int,  
+  "username":         String,  
+  "email":            String,  
+  "cuisine":          String,  
+  "lunch":            Boolean,  
+  "dinner":           Boolean,  
   "coffee_lightMeal": Boolean,  
-  "reviewIndex": int  
+  "reviewIndex":      int  
 }  
 ```
 E.g  
@@ -81,27 +81,27 @@ Url to test: https://mityit.herokuapp.com/user/info/7
 Original information:  
 ```
 {  
-  "id": 7,  
-  "username": "user7",  
-  "email": "email_7@gmail.com",  
-  "cuisine": "Italian",  
-  "lunch": true,  
-  "dinner": true,  
+  "id":               7,  
+  "username":         "user7",  
+  "email":            "email_7@gmail.com",  
+  "cuisine":          "Italian",  
+  "lunch":            true,  
+  "dinner":           true,  
   "coffee_lightMeal": false,  
-  "reviewIndex": 6  
+  "reviewIndex":      6  
 },
 ```
 Make changes(JSON code to test):  
 ```
 {   
-  "id": 7,  
-  "username": "user7_newname",  
-  "email": "email_7@gmail.com",  
-  "cuisine": "Korean",  
-  "lunch": true,  
-  "dinner": true,  
+  "id":               7,  
+  "username":         "user7_newname",  
+  "email":            "email_7@gmail.com",  
+  "cuisine":          "Korean",  
+  "lunch":            true,  
+  "dinner":           true,  
   "coffee_lightMeal": false,  
-  "reviewIndex": 6  
+  "reviewIndex":      6  
 },  
 ```
 
@@ -109,11 +109,11 @@ Make changes(JSON code to test):
 Input JSON file:
 ```
 {  
-  "username": String,  
-  "email": String,  
-  "cuisine": String,  
-  "lunch": Boolean,  
-  "dinner": Boolean,  
+  "username":    String,  
+  "email":       String,  
+  "cuisine":     String,  
+  "lunch":       Boolean,  
+  "dinner":      Boolean,  
   "reviewIndex": int  
 }  
 ```
@@ -139,10 +139,10 @@ Router for review system allows to find reviews, edit existing review and upload
 Input JSON file:  
 ```
 {  
-  "givenBy": int,  
-  "date": date,  
-  "score": int,  
-  "tag": array of Strings,  
+  "givenBy": int,
+  "date":    date,
+  "score":   int,
+  "tag":     String[],
   "comment": String  
 }
 ```

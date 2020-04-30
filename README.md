@@ -109,7 +109,7 @@ Input JSON file:
 ```
 
 * https://mityit.herokuapp.com/user/signup :  
-  * a **POST** request that add a new user's information  
+  * a **POST** request that adds a new user's information  
 Input JSON file:
 ```
 {  
@@ -127,13 +127,13 @@ Input JSON file:
 In matching system, a user can find all suitable partners that matches him/her based on either cuisine preference or time availability.
 
 * https://mityit.herokuapp.com/match/:id :  
-  * a **GET** request that retrieve all matches for a user (based on both cuisine and availability)
+  * a **GET** request that retrieves all matches for a user (based on both cuisine and availability)
 
 * https://mityit.herokuapp.com/match/find_cuisine/:id :  
-  * a **GET** request that find matches for a user by cuisine 
+  * a **GET** request that finds matches for a user by cuisine 
 
 * https://mityit.herokuapp.com/match/find_availability/:id :  
-  * a **GET** request that find matches for a user by availability  
+  * a **GET** request that finds matches for a user by availability  
 
   
 ### 3. Review System (reviewRouter)
@@ -141,10 +141,10 @@ In matching system, a user can find all suitable partners that matches him/her b
 Router for review system allows to find reviews, edit existing review and upload new review for a specific user.
 
 * https://mityit.herokuapp.com/review/:id :  
-  * a **GET** request that get reviews written to the user identifiable by the provided ID  
+  * a **GET** request that gets reviews written to the user identifiable by the provided ID  
 
 * https://mityit.herokuapp.com/review/:id :  
-  * a **POST** request that write a new review to the user identifiable by the provided ID  
+  * a **POST** request that writes a new review to the user identifiable by the provided ID  
 Input JSON file:  
 ```
 {  
@@ -157,5 +157,5 @@ Input JSON file:
 ```
 
 * https://mityit.herokuapp.com/review/:id :  
-  * a **PATCH** request that modeify an existing review to the user identifiable by the provided ID  
+  * a **PATCH** request that modeifies an existing review to the user identifiable by the provided ID  
   * Input JSON file: the same data structure as review **POST** request  

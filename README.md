@@ -79,7 +79,7 @@ Input JSON file:
   "reviewIndex":      int  
 }  
 ```
-&emsp;&emsp;  Example for updating an existing user's information                                          
+&emsp;&emsp;  Example for updating an existing user's information:                                         
 &emsp;&emsp;  Url to test: https://mityit.herokuapp.com/user/info/7  
 &emsp;&emsp;  Original information:  
 ```

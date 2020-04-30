@@ -58,11 +58,14 @@ Below is an exapmle of the data structure for reviews, which shows the review fo
 
 Our first core functionality is user system. It allows to view all users’ information, extract an existing user's information, modify existing user's information, and add new user to json file.  
 
-* https://mityit.herokuapp.com/user/info : a **GET** request that retrieves all users' information  
+* https://mityit.herokuapp.com/user/info : 
+  * a **GET** request that retrieves all users' information  
 
-* https://mityit.herokuapp.com/user/info/:id : a **GET** request that retrieves a particular user's information by id  
+* https://mityit.herokuapp.com/user/info/:id :  
+  * a **GET** request that retrieves a particular user's information by id  
 
-* https://mityit.herokuapp.com/user/info/:id : a **PATCH** request that updates an exisiting user's information by id  
+* https://mityit.herokuapp.com/user/info/:id :  
+  * a **PATCH** request that updates an exisiting user's information by id  
 Input JSON file: 
 ```
 {  
@@ -105,7 +108,8 @@ Input JSON file:
 },  
 ```
 
-* https://mityit.herokuapp.com/user/signup : a **POST** request that add a new user's information  
+* https://mityit.herokuapp.com/user/signup :  
+  * a **POST** request that add a new user's information  
 Input JSON file:
 ```
 {  
@@ -122,20 +126,25 @@ Input JSON file:
 
 In matching system, a user can find all suitable partners that matches him/her based on either cuisine preference or time availability.
 
-* https://mityit.herokuapp.com/match/:id : a **GET** request that retrieve all matches for a user (based on both cuisine and availability)
+* https://mityit.herokuapp.com/match/:id :  
+  * a **GET** request that retrieve all matches for a user (based on both cuisine and availability)
 
-* https://mityit.herokuapp.com/match/find_cuisine/:id : a **GET** request that find matches for a user by cuisine 
+* https://mityit.herokuapp.com/match/find_cuisine/:id :  
+  * a **GET** request that find matches for a user by cuisine 
 
-* https://mityit.herokuapp.com/match/find_availability/:id : a **GET** request that find matches for a user by availability  
+* https://mityit.herokuapp.com/match/find_availability/:id :  
+  * a **GET** request that find matches for a user by availability  
 
   
 ### 3. Review System (reviewRouter)
 
 Router for review system allows to find reviews, edit existing review and upload new review for a specific user.
 
-* https://mityit.herokuapp.com/review/:id : a **GET** request that get reviews written to the user identifiable by the provided ID  
+* https://mityit.herokuapp.com/review/:id :  
+  * a **GET** request that get reviews written to the user identifiable by the provided ID  
 
-* https://mityit.herokuapp.com/review/:id : a **POST** request that write a new review to the user identifiable by the provided ID  
+* https://mityit.herokuapp.com/review/:id :  
+  * a **POST** request that write a new review to the user identifiable by the provided ID  
 Input JSON file:  
 ```
 {  
@@ -147,5 +156,6 @@ Input JSON file:
 }
 ```
 
-* https://mityit.herokuapp.com/review/:id : a **PATCH** request that modeify an existing review to the user identifiable by the provided ID  
-Input JSON file: the same data structure as review **POST** request  
+* https://mityit.herokuapp.com/review/:id :  
+  * a **PATCH** request that modeify an existing review to the user identifiable by the provided ID  
+  * Input JSON file: the same data structure as review **POST** request  

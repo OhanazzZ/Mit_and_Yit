@@ -1,56 +1,56 @@
 # Welcome to Mit & Yit
 
 We are in the **Monday 2 pm** workshop.
+ 
+| Member      | ID     |
+| :---------- | :----- |
+| Kechen Zhao | 957398 |
+| Bin Zhang   | 895427 |
+| Yuan Ye     | 980728 | 
 
-Members:  
-* Kechen Zhao 957398  
-* Bin Zhang   895427  
-* Yuan Ye     980728  
-
-The web app we are creating is a social dining app.
+The web app we are creating is a social dining platform.
 
 ## Deliverable 2 descrpition:
 
 The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.  
 The URL to the live website is https://mityit.herokuapp.com.  
-The commit id is 8308318.  
+The commit id is **8308318** (**_please update this after the final commit_**).  
 
 
 Three core functionalities, users system, matching system and review system, have been implemented separately by using three routers. Detailed descriptions are listed below. 
 
-Currently our database has users with id 1~9. The data structure of Users data is  
+Below is the data structure for users. Currently our database has users with id 1~9.  
 ```markdown
 {  
-    "id": int,  //a unique int that identify a user  
-    "username": String,  
-    "email": String,  
-    "cuisine": String, //their food preference  
-    "lunch": Boolean, //availability for lunch   
-    "dinner": Boolean, //availability for dinner  
+    "id":               int,     //a unique int that identifies a user  
+    "username":         String,  
+    "email":            String,  
+    "cuisine":          String,  //their food preference  
+    "lunch":            Boolean, //availability for lunch   
+    "dinner":           Boolean, //availability for dinner  
     "coffee_lightMeal": Boolean, //availability for coffee  
-    "reviewIndex": int //a unique index position that help to retrieve user's review from the Review database  
+    "reviewIndex":      int      //a unique index position that help to retrieve user's review from the Review database  
 }  
 ```
-Exapmle of data structure in Review data: The below data is the review for user id 1, which is at index 0 position.   
+Below is an exapmle of the data structure for reviews, which shows a review for user id 1, which is at index 0 position.   
 ```
 {  
-   score:3.5, //int, average score calculated based on all reviews  
-   scoreNum:2, //int, number of review messages received  
-   review:[ //an array that store all review messages  
-            {  
-              givenBy:2,  
-              date:"03-04-2019",  
-              tag:["nice","interesting"],  
-              comment: "really nice and kind",  
-            },  
-            {  
-              givenBy:7,  
-              date:"09-04-2019",  
-              score:3,  
-              tag:["boring","kind"],  
-              comment: "xx is nice but we have no common interest",  
-             },  
-          ]  
+   score:    3.5, //int, average score calculated based on all reviews  
+   scoreNum: 2,   //int, number of review messages received  
+   review:        //an array that store all review messages  
+        [{  
+          givenBy:2,  
+          date:"03-04-2019",  
+          tag:["nice","interesting"],  
+          comment: "really nice and kind",  
+         },  
+         {  
+          givenBy:7,  
+          date:"09-04-2019",  
+          score:3,  
+          tag:["boring","kind"],  
+          comment: "xx is nice but we have no common interest",  
+         }]  
 }  
 ```
 

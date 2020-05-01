@@ -79,9 +79,9 @@ Our first core functionality is user system. It allows to view all users’ info
       "reviewIndex":      int  
     }  
     ```
-    &emsp;&emsp;  Example for updating an existing user's information:                                         
-    &emsp;&emsp;  Url to test: https://mityit.herokuapp.com/user/info/7  
-    &emsp;&emsp;  Original information:  
+    Example for updating an existing user's information:                                         
+    Url to test: https://mityit.herokuapp.com/user/info/7  
+    Original information:  
     ```
     {  
       "id":               7,  
@@ -94,7 +94,7 @@ Our first core functionality is user system. It allows to view all users’ info
       "reviewIndex":      6  
     },
     ```
-    &emsp;&emsp;  Make changes(JSON code to test):  
+    Make changes(JSON code to test):  
     ```
     {   
       "id":               7,  
@@ -110,17 +110,17 @@ Our first core functionality is user system. It allows to view all users’ info
 
 * https://mityit.herokuapp.com/user/signup :  
   * **POST** request - add a new user's information  
-Input JSON file:
-```
-{  
-  "username":    String,  
-  "email":       String,  
-  "cuisine":     String,  
-  "lunch":       Boolean,  
-  "dinner":      Boolean,  
-  "reviewIndex": int  
-}  
-```
+    Input JSON file:
+    ```
+    {  
+      "username":    String,  
+      "email":       String,  
+      "cuisine":     String,  
+      "lunch":       Boolean,  
+      "dinner":      Boolean,  
+      "reviewIndex": int  
+    }  
+    ```
 
 ### 2. Matching Systen (matchRouter)
 
@@ -145,16 +145,16 @@ Router for review system allows to find reviews, edit existing review and upload
 
 * https://mityit.herokuapp.com/review/:id :  
   * **POST** request - write a new review to the user identifiable by the provided ID  
-Input JSON file:  
-```
-{  
-  "givenBy": int,
-  "date":    date,
-  "score":   int,
-  "tag":     String[],
-  "comment": String  
-}
-```
+    Input JSON file:  
+    ```
+    {  
+      "givenBy": int,
+      "date":    date,
+      "score":   int,
+      "tag":     String[],
+      "comment": String  
+    }
+    ```
 
 * https://mityit.herokuapp.com/review/:id :  
   * **PATCH** request - modify an existing review to the user identifiable by the provided ID  

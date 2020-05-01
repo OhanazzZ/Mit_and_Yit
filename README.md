@@ -66,47 +66,47 @@ Our first core functionality is user system. It allows to view all users’ info
 
 * https://mityit.herokuapp.com/user/info/:id :  
   * **PATCH** request - update an exisiting user's information by id  
-Input JSON file: 
-```
-{  
-  "id":               int,  
-  "username":         String,  
-  "email":            String,  
-  "cuisine":          String,  
-  "lunch":            Boolean,  
-  "dinner":           Boolean,  
-  "coffee_lightMeal": Boolean,  
-  "reviewIndex":      int  
-}  
-```
-&emsp;&emsp;  Example for updating an existing user's information:                                         
-&emsp;&emsp;  Url to test: https://mityit.herokuapp.com/user/info/7  
-&emsp;&emsp;  Original information:  
-```
-{  
-  "id":               7,  
-  "username":         "user7",  
-  "email":            "email_7@gmail.com",  
-  "cuisine":          "Italian",  
-  "lunch":            true,  
-  "dinner":           true,  
-  "coffee_lightMeal": false,  
-  "reviewIndex":      6  
-},
-```
-&emsp;&emsp;  Make changes(JSON code to test):  
-```
-{   
-  "id":               7,  
-  "username":         "user7_newname",  
-  "email":            "email_7@gmail.com",  
-  "cuisine":          "Korean",  
-  "lunch":            true,  
-  "dinner":           true,  
-  "coffee_lightMeal": false,  
-  "reviewIndex":      6  
-},  
-```
+  * Input JSON file: 
+    ```
+    {  
+      "id":               int,  
+      "username":         String,  
+      "email":            String,  
+      "cuisine":          String,  
+      "lunch":            Boolean,  
+      "dinner":           Boolean,  
+      "coffee_lightMeal": Boolean,  
+      "reviewIndex":      int  
+    }  
+    ```
+    &emsp;&emsp;  Example for updating an existing user's information:                                         
+    &emsp;&emsp;  Url to test: https://mityit.herokuapp.com/user/info/7  
+    &emsp;&emsp;  Original information:  
+    ```
+    {  
+      "id":               7,  
+      "username":         "user7",  
+      "email":            "email_7@gmail.com",  
+      "cuisine":          "Italian",  
+      "lunch":            true,  
+      "dinner":           true,  
+      "coffee_lightMeal": false,  
+      "reviewIndex":      6  
+    },
+    ```
+    &emsp;&emsp;  Make changes(JSON code to test):  
+    ```
+    {   
+      "id":               7,  
+      "username":         "user7_newname",  
+      "email":            "email_7@gmail.com",  
+      "cuisine":          "Korean",  
+      "lunch":            true,  
+      "dinner":           true,  
+      "coffee_lightMeal": false,  
+      "reviewIndex":      6  
+    },  
+    ```
 
 * https://mityit.herokuapp.com/user/signup :  
   * **POST** request - add a new user's information  

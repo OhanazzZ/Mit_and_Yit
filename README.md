@@ -58,13 +58,13 @@ Below is an exapmle of the data structure for reviews, which shows the review fo
 
 Our first core functionality is user system. It allows to view all users’ information, extract an existing user's information, modify existing user's information, and add new user to json file.  
 
-* https://mityit.herokuapp.com/user/info : 
+* https://mityit.herokuapp.com/user/info
   * **GET** request - retrieve all users' information  
 
-* https://mityit.herokuapp.com/user/info/:id :  
+* https://mityit.herokuapp.com/user/info/:id
   * **GET** request - retrieve a particular user's information by id  
 
-* https://mityit.herokuapp.com/user/info/:id :  
+* https://mityit.herokuapp.com/user/info/:id
   * **PATCH** request - update an exisiting user's information by id  
   * Input JSON file: 
     ```
@@ -108,7 +108,7 @@ Our first core functionality is user system. It allows to view all users’ info
     },  
     ```
 
-* https://mityit.herokuapp.com/user/signup :  
+* https://mityit.herokuapp.com/user/signup
   * **POST** request - add a new user's information  
     Input JSON file:
     ```
@@ -140,10 +140,10 @@ In matching system, a user can find all suitable partners that matches him/her b
 
 Router for review system allows to find reviews, edit existing review and upload new review for a specific user.
 
-* https://mityit.herokuapp.com/review/:id :  
+* https://mityit.herokuapp.com/review/:id
   * **GET** request - get reviews written to the user identifiable by the provided ID  
 
-* https://mityit.herokuapp.com/review/:id :  
+* https://mityit.herokuapp.com/review/:id
   * **POST** request - write a new review to the user identifiable by the provided ID  
     Input JSON file:  
     ```
@@ -156,6 +156,6 @@ Router for review system allows to find reviews, edit existing review and upload
     }
     ```
 
-* https://mityit.herokuapp.com/review/:id :  
+* https://mityit.herokuapp.com/review/:id
   * **PATCH** request - modify an existing review to the user identifiable by the provided ID  
   * Input JSON file: the same data structure as review **POST** request  

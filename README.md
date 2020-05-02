@@ -122,7 +122,7 @@ Our first core functionality is user system. It allows to view all users’ info
     }  
     ```
 
-### 2. Matching Systen (matchRouter)
+### 2. Matching System (matchRouter)
 
 In matching system, a user can find all suitable partners that matches him/her based on either cuisine preference or time availability.
 

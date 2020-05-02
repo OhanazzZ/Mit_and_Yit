@@ -14,7 +14,7 @@ The web app we are creating is a social dining platform.
 
 The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.  
 The URL to the live website is https://mityit.herokuapp.com.  
-The commit id is **8308318** (**_please update this after the final commit_**).  
+The commit id is **922ea44**.
 
 
 Three core functionalities, **user profile**, **matching system** and **review system**, have been implemented separately by using three routers. Detailed descriptions are listed below. 

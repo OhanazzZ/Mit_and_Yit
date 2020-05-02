@@ -29,6 +29,7 @@ const writeReviewToUserId = (req, res) => {
     reviews[user.reviewIndex].review.push(req.body);
     reviews[user.reviewIndex].scoreNum += 1;
     reviews[user.reviewIndex].score = (allScore + req.body.score) / reviews[user.reviewIndex].scoreNum;
+    
     res.send({
         "user": user.username, 
         "has reviews": reviews[user.reviewIndex]
@@ -47,7 +48,7 @@ const writeReviewToUserId = (req, res) => {
 
     const newReview = req.body;
     reviews[user.reviewIndex].review.forEach(review => {
-        if (review.givenBy === newReview.givenBy) {
+        if (review.givenBy === newReview.givenBy && review.date === newReview.date) {
             const allScore = reviews[user.reviewIndex].score * reviews[user.reviewIndex].scoreNum - review.score;
             Object.assign(review, newReview)
             reviews[user.reviewIndex].score = (allScore + newReview.score) / reviews[user.reviewIndex].scoreNum;

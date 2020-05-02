@@ -65,7 +65,7 @@ Our first core functionality is user system. It allows to view all users’ info
   * **GET** request - retrieve a particular user's information by id  
 
 * https://mityit.herokuapp.com/user/info/:id
-  * **PATCH** request - update an exisiting user's information by id  
+  * **PATCH** request - update an existing user's information by id  
   * Input JSON file: 
     ```
     {  

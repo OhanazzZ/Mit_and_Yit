@@ -1,14 +1,19 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const path = require('path');
 
+// init app
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.set('views',path.join(__dirname, 'views'));
+app.set('view engine','pug');
+
 // homepage
 app.get("/", (req, res) => {
-    res.send("<H1>Welcome to Mit & Yit homepage</H1>");
+    res.render('index');
 });
 
 // three paths: user, matching system and review system

@@ -1,0 +1,40 @@
+doctype html
+html(lang='en')
+    head
+        title Mit&Yit
+        link(rel='stylesheet' href='/css/main.css')
+    body
+        nav#navbar
+            .container
+                ul
+                    li
+                        a(href='/') Home
+                    li
+                        a(href='/user/signup') Signup
+                    li
+                        a(href='#') Personal Profile
+                    li
+                        a(href='#') Customized Matching
+                    li
+                        a(href='#') Review
+
+        .container
+            h1 Welcome to Mit&Yit
+            p.subhead
+                | Food is as much about sharing as it is about nourishment, why not join a table to meet your potential friends ;)
+            ul.tag(style='list-style-type:none;')
+                li
+                    a(href='https://mityit.herokuapp.com/user/info')
+                        img.user(src='/images/user.png', alt='user icon')
+                    p Personal Profile
+                li
+                    a(href='https://mityit.herokuapp.com/match/1')
+                        img.match(src='/images/match.png', alt='match icon')
+                    p Customized Matching
+                li
+                    a(href='https://mityit.herokuapp.com/review/1')
+                        img.review(src='/images/review.png', alt='review icon')
+                    p Review
+
+        footer#main-footer
+            p Copyright © 2020 Mit&Yit

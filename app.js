@@ -8,8 +8,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //load view engine
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+app.set('views', path.join(__dirname,"views"));
+app.set('view engine', 'pug');
+
+app.use(express.static(path.join(__dirname,"public")));
 
 // homepage
 app.get("/", (req, res) => {

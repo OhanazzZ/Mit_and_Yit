@@ -1,0 +1,60 @@
+@import url(https://fonts.google.com/specimen/Quicksand?selection.family=Quicksand:wght@500;505);
+
+body {
+    margin: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.background {
+    opacity: 0.5;
+    filter: alpha(opacity=20);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+    text-align: center;
+}
+
+.container { 
+    text-align: center;
+    position: relative;
+}
+
+
+h1, .subhead {
+    position: relative;
+    z-index: 3;
+}
+
+h1 {
+    position: relative;
+    font-size: 3.0em;
+    font-style: italic;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;   
+}
+
+.subhead {
+    position: relative;
+    font-size: 1.1em;
+}
+ 
+.tag {
+    position: relative;
+    display: inline;
+}
+
+
+.user {
+    width: 10%;
+    height: 10%;
+}
+
+.match {
+    width: 10%;
+    height: 10%;
+}
+
+.review {
+    width: 10%;
+    height: 10%;
+}

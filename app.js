@@ -2,14 +2,14 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require('path');
 
-// init app
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.set('views',path.join(__dirname, 'views'));
-app.set('view engine','pug');
+//load view engine
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 // homepage
 app.get("/", (req, res) => {
@@ -30,7 +30,8 @@ app.use((req, res) => {
     res.status(404).send("Not found");
 });
 
-const PORT = process.env.PORT || 3000;
+
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
     console.log(`Mit & Yit is listening on port ${PORT}!`);
 });

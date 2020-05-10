@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 
+app.use(express.static(path.join(__dirname,"public")));
+
 // homepage
 app.get("/", (req, res) => {
     res.render('index');

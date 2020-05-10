@@ -1,7 +1,7 @@
 doctype html
 html(lang='en')
     head
-        title Mit&Yit
+        title Mit&Yit Signup
         link(rel='stylesheet' href='/css/main.css')
     body
         nav#navbar
@@ -19,22 +19,43 @@ html(lang='en')
                         a(href='#') Review
 
         .container
-            h1 Welcome to Mit&Yit
-            p.subhead
-                | Food is as much about sharing as it is about nourishment, why not join a table to meet your potential friends ;)
-            ul.tag(style='list-style-type:none;')
-                li
-                    a(href='https://mityit.herokuapp.com/user/info')
-                        img.user(src='/images/user.png', alt='user icon')
-                    p Personal Profile
-                li
-                    a(href='https://mityit.herokuapp.com/match/1')
-                        img.match(src='/images/match.png', alt='match icon')
-                    p Customized Matching
-                li
-                    a(href='https://mityit.herokuapp.com/review/1')
-                        img.review(src='/images/review.png', alt='review icon')
-                    p Review
+            h1 SignUp
+            section#left
+                form
+                    #form-group
+                        label First Name:
+                        input.form-control(name='name', type='text')
+                    #form-group
+                        label Last Name:
+                        input.form-control(name='name', type='text')
+                    #form-group
+                        label Gender:
+                        select(name='gender')
+                            option(value='male') Male
+                            option(value='female') Female
+                            option(value='other') Other
+
+                    #form-group
+                        label Email:
+                        input.form-control(name='email', type='text')
+                    #form-group
+                        label Username:
+                        input.form-control(name='username',type='text')
+                    #form-group
+                        label Password:
+                        input.form-control(name='password',type='password')
+                    #form-group
+                        label Confirm:
+                        input.form-control(name='password2',type='password')
+                    #form-group
+                        label Cuisine Perference:
+                        input.form-control(name='cuisine', type='text')
+                    #form-group
+                        label Introduce Yourself:
+                        textarea.form-control(name='textarea', type='textarea')
+
+                br
+                input.btn.btn-primary(class="button",type='submit',value='Submit')
 
         footer#main-footer
             p Copyright © 2020 Mit&Yit

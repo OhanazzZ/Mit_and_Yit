@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
     res.render('index');
 });
 
+app.get("/user/signup", (req, res) => {
+    res.render('signup');
+});
+
 // three paths: user, matching system and review system
 const userRouter = require('./routes/userRouter.js');
 const matchRouter = require('./routes/matchRouter.js');

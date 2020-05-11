@@ -1,63 +1,4 @@
-const mongoose = require("mongoose");
-
-const userSchema = new mongoose.Schema({
-    id: Number,
-    username: String,
-    email: String,
-    dietary: {
-        allergy: {
-            type: String,
-            enum:["veg", "dairy", "gluten", "nut", "seafood"]
-        },
-        religion: {
-            type: String,
-            enum:["Hindu","Jewish","Islamic"]
-        }
-    },
-    comment: {
-        type: String,
-        maxlength: 30
-    },
-    availability: {
-        lunch: Boolean,
-        dinner: Boolean,
-        coffee: Boolean
-    },
-    additional: {
-        academic: {
-            major: String,
-            level: Number,
-        },
-        hobbies: [String],
-        career: [String],
-        numberOfPerson: Number
-    },
-    reviewid: String
-})
-
-const User = mongoose.model("user", userSchema, "user");
-module.exports = User;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* let users = [
+let users = [
     {
         id:1,
         username : "user1",
@@ -150,4 +91,4 @@ module.exports = User;
     }
 ];
 
-module.exports = users; */
+module.exports = users;

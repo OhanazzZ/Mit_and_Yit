@@ -13,6 +13,11 @@ userRouter.get("/info/:id", userController.getUserByID);
 userRouter.patch("/info/:id", userController.updateUserByID);
 
 // add a user (tested)
+
+userRouter.get("/signup", (req, res) => {
+    res.render('signup');
+});
+
 userRouter.post("/signup", userController.addUser);
 
 

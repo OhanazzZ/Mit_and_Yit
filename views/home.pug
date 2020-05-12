@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    nav#navbar
+        .container
+            ul
+                li
+                    a(href='/home') Home
+                li
+                    a(href='#') Profile
+                li
+                    a(href='#') Matching
+                li
+                    a(href='#') Review
+
+    .container#home
+        h1 Welcome to Mit&Yit
+
+        ul.tag(style='list-style-type:none;')
+            li
+                a(href='https://mityit.herokuapp.com/user/info')
+                    #icon
+                        img.user(src='/images/user.png', alt='user icon')
+                p Personal Profile
+            li
+                a(href='https://mityit.herokuapp.com/match/1')
+                    #icon
+                        img.match(src='/images/match.png', alt='match icon')
+                p Customized Matching
+            li
+                a(href='https://mityit.herokuapp.com/review/1')
+                    #icon
+                        img.review(src='/images/review.png', alt='review icon')
+                p Review

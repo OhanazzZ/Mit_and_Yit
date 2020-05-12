@@ -22,9 +22,13 @@ app.get("/", (req, res) => {
     res.render('index');
 });
 
-// app.get("/user/signup", (req, res) => {
-//     res.render('signup');
-// });
+app.get("/home", (req, res) => {
+    res.render('home');
+});
+
+app.get("/user/login", (req, res) => {
+    res.render('login');
+});
 
 // three paths: user, matching system and review system
 const userRouter = require('./routes/userRouter.js');

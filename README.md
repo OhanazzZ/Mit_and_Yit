@@ -18,7 +18,7 @@ The commit id is **UPDATE LATER**.
 
 **User profile** is the core functionality we implemented for deliverable 3. Users can sign up or login into our app, view and modify their information in their personal profile. 
 
-### User Profile Instruction：
+*### User Profile Instruction：
 
 #### Welcome page
 In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form.

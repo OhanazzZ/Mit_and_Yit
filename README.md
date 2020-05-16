@@ -20,7 +20,8 @@ The commit id is **UPDATE LATER**.
 
 ### User Profile Instruction：
 
-#### Welcome page
+* Welcome page
+
 In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form.
 
 

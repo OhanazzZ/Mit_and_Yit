@@ -21,7 +21,8 @@ The commit id is **UPDATE LATER**.
 ### User Profile Instruction：
 
 #### Welcome page
-In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form. 
+In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form.
+
 
 #### Register page
 New user's information will be entered in this webpage and delivered to the database. Inputs of all essential fields (form under "Basic Profile") will be checked before store into the database. If you enter an invalid input(e.g. empty value, invalid email format,an existed username/email, or not reach the minimum length of password, or password is not matched with you password confirmation), after click "Submit" button, warning messages will be displayed at the top of the form, and you will need to register again. 

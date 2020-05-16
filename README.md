@@ -35,7 +35,7 @@ After register or login, you will be redirect to our home page. This page includ
 #### Personal Profile page
 This page will show all your personal information. Similar to the home page, a navigation bar is at the top of the page, a home icon (upper-left corner) can redirect you to the home page, and a logout icon (upper-right corner) can redirect you to the welcome page. If you want to edit any of your information, click "Edit" button, then you will be redirect to edit_profile webpage. 
 
-#### Personal Profile page
+#### Edit Personal Profile page
 In this webpage, you can modify you personal information, and all valid modified values will be updated in the database. Similar to the profile page, a navigation bar is at the top of the page, a home icon (upper-left corner) can redirect you to the home page, and a logout icon (upper-right corner) can redirect you to the welcome page. As in the register page, inputs of fields in "Basic Profile" will be checked before the update is actually processed. If any invalid value (examples are the same for register page) is entered, after you click the "Update" button, error messages will be displayed and you will need to update your profile again. If all your input values are valid, "Update" button will redirect you to the Personal Profile page, and a message "Profile have been updated" will be showed at the top of the page. Updated information will be displayed in your profile page now. 
 
 

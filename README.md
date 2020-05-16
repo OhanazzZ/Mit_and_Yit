@@ -10,6 +10,35 @@ We are in the **Monday 2 pm** workshop.
 
 The web app we are creating is a social dining platform.
 
+## Deliverable 3 descrpition:
+
+The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.  
+The URL to the live website is https://mityit.herokuapp.com.  
+The commit id is **UPDATE LATER**.
+
+**User profile** is the core functionality we implemented for deliverable 3. Users can sign up or login into our app, view and modify their information in their personal profile. 
+
+### User Profile Instruction
+
+#### Welcome page
+In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form. 
+
+#### Register page
+New user's information will be entered in this webpage and delivered to the database. Inputs of all essential fields (form under "Basic Profile") will be checked before store into the database. If you enter an invalid input(e.g. empty value, invalid email format,an existed username/email, or not reach the minimum length of password, or password is not matched with you password confirmation), after click "Submit" button, warning messages will be displayed at the top of the form, and you will need to register again. 
+
+#### Login page
+User with an existed account can login the app via this page. Inputs of username and password must be valid and existed in our database, and they will be checked. If you enter a username which is not in the database, or an incorrect password, error messages will be showed at the top of the webpage after you click "Login" button, and you need to login again. 
+
+#### Home page
+After register or login, you will be redirect to our home page. This page includes a navigation bar at the top, a logout icon (upper-right corner), which is a link to the welcome page, and three icons in the middle, each of them is a link to our profile page, matching system and review system. For now we only finished the front end for our personal profile, so to access it, you can click the profile icon or "Profile" in the navigation bar. 
+
+#### Personal Profile page
+This page will show all your personal information. Similar to the home page, a navigation bar is at the top of the page, a home icon (upper-left corner) can redirect you to the home page, and a logout icon (upper-right corner) can redirect you to the welcome page. If you want to edit any of your information, click "Edit" button, then you will be redirect to edit_profile webpage. 
+
+#### Personal Profile page
+In this webpage, you can modify you personal information, and all valid modified values will be updated in the database. Similar to the profile page, a navigation bar is at the top of the page, a home icon (upper-left corner) can redirect you to the home page, and a logout icon (upper-right corner) can redirect you to the welcome page. As in the register page, inputs of fields in "Basic Profile" will be checked before the update is actually processed. If any invalid value (examples are the same for register page) is entered, after you click the "Update" button, error messages will be displayed and you will need to update your profile again. If all your input values are valid, "Update" button will redirect you to the Personal Profile page, and a message "Profile have been updated" will be showed at the top of the page. Updated information will be displayed in your profile page now. 
+
+
 ## Deliverable 2 descrpition:
 
 The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.  
@@ -159,34 +188,3 @@ Router for review system allows to find reviews, edit existing review and upload
 * https://mityit.herokuapp.com/review/:id
   * **PATCH** request - modify an existing review to the user identifiable by the provided ID  
   * Input JSON file: the same data structure as review **POST** request  
-
-
-## Deliverable 3 descrpition:
-
-The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.  
-The URL to the live website is https://mityit.herokuapp.com.  
-The commit id is **UPDATE LATER**.
-
-**User profile** is the core functionality we implemented for deliverable 3. Users can sign up or login into our app, view and modify their information in their personal profile. 
-
-### User Profile Instruction
-
-#### Welcome page
-In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form. 
-
-#### Register page
-New user's information will be entered in this webpage and delivered to the database. Inputs of all essential fields (form under "Basic Profile") will be checked before store into the database. If you enter an invalid input(e.g. empty value, invalid email format,an existed username/email, or not reach the minimum length of password, or password is not matched with you password confirmation), after click "Submit" button, warning messages will be displayed at the top of the form, and you will need to register again. 
-
-#### Login page
-User with an existed account can login the app via this page. Inputs of username and password must be valid and existed in our database, and they will be checked. If you enter a username which is not in the database, or an incorrect password, error messages will be showed at the top of the webpage after you click "Login" button, and you need to login again. 
-
-#### Home page
-After register or login, you will be redirect to our home page. This page includes a navigation bar at the top, a logout icon (upper-right corner), which is a link to the welcome page, and three icons in the middle, each of them is a link to our profile page, matching system and review system. For now we only finished the front end for our personal profile, so to access it, you can click the profile icon or "Profile" in the navigation bar. 
-
-#### Personal Profile page
-This page will show all your personal information. Similar to the home page, a navigation bar is at the top of the page, a home icon (upper-left corner) can redirect you to the home page, and a logout icon (upper-right corner) can redirect you to the welcome page. If you want to edit any of your information, click "Edit" button, then you will be redirect to edit_profile webpage. 
-
-#### Personal Profile page
-In this webpage, you can modify you personal information, and all valid modified values will be updated in the database. Similar to the profile page, a navigation bar is at the top of the page, a home icon (upper-left corner) can redirect you to the home page, and a logout icon (upper-right corner) can redirect you to the welcome page. As in the register page, inputs of fields in "Basic Profile" will be checked before the update is actually processed. If any invalid value (examples are the same for register page) is entered, after you click the "Update" button, error messages will be displayed and you will need to update your profile again. If all your input values are valid, "Update" button will redirect you to the Personal Profile page, and a message "Profile have been updated" will be showed at the top of the page. Updated information will be displayed in your profile page now. 
-
-

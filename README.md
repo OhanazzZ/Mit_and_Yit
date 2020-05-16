@@ -23,6 +23,7 @@ The commit id is **UPDATE LATER**.
 * #### Welcome page
 
     In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form.
+    
     NOTE: if you directly enter “/home", "/user/profile" or "/user/edit" to the url, you will not be allowed to go to those webpages, since you are not authenticated. Once you login or signup, you will be allowed to access them.
 
 

@@ -40,22 +40,26 @@ The commit id is **UPDATE LATER**.
 
 * #### Welcome page
 
-    In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form.
-    
-    NOTE: if you directly enter “/home", "/user/profile" or "/user/edit" to the url, you will not be allowed to go to those webpages, since you are not authenticated. Once you login or signup, you will be allowed to access them.
+    In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form.  
     ![welcome](/manual-ReadMe_images/home-pre-login.jpg)
+    
+    NOTE: if you directly enter “/home", "/user/profile" or "/user/edit" to the url, you will not be allowed to go to those webpages, since you are not authenticated. Once you login or signup, you will be allowed to access them.  
+    ![welcome-unauthorised](/manual-ReadMe_images/home-unortharised.jpg)
+
 
 * #### Register page
 
    New user's information will be entered in this webpage and delivered to the database. Inputs of all essential fields (form under "Basic Profile") will be checked before store into the database. If you enter an invalid input(e.g. empty value, invalid email format,an existed username/email, or not reach the minimum length of password, or password is not matched with you password confirmation), after click "Submit" button, warning messages will be displayed at the top of the form, and you will need to register again. Once you successfully signup, you will be redirect to the login page, with a successful message displays at the top of the login page. 
-   |||
-   |--|--|
-   |![user](/manual-ReadMe_images/signup1.jpg) |![user](/manual-ReadMe_images/signup2.jpg)|
+   | register page | example: register page error |
+   | -- | -- |
+   |![user](/manual-ReadMe_images/signup1.jpg) | ![user](/manual-ReadMe_images/signup-error.jpg)|
 
 * #### Login page
 
-   User with an existed account can login the app via this page. Inputs of username and password must be valid and existed in our database, and they will be checked. If you enter a username which is not in the database, or an incorrect password, error messages will be showed at the top of the webpage after you click "Login" button, and you need to login again. 
-   ![user](/manual-ReadMe_images/login.jpg)
+   User with an existed account can login the app via this page. Inputs of username and password must be valid and existed in our database, and they will be checked. If you enter a username which is not in the database, or an incorrect password, error messages will be showed at the top of the webpage after you click "Login" button, and you need to login again.    
+   | login page | example: login without input|
+   |--|--|
+   |![user](/manual-ReadMe_images/login.jpg) |![user-error](/manual-ReadMe_images/login-noInput.jpg)|
 
 * #### Home page
 

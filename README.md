@@ -50,7 +50,7 @@ The commit id is **ef74058**.
 
 * #### Register page
 
-   This is the register page. Input validations have been implemeentd to ensure well-formedness of the user's data.  
+   This is the register page. Input validations have been implemented to ensure well-formedness of the user's data.  
    If successful, the user will be redirected to the home page.
    | register page | example: register failed |
    | -- | -- |

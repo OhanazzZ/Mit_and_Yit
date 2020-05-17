@@ -39,43 +39,47 @@ The commit id is **UPDATE LATER**.
 ### User Profile Instruction：
 
 * #### Welcome page
-
-    In the welcome page, we have two icons, one for register and one for login. New user can click the register icon to signup and enter their personal information. If you have already had an account, simply click the login icon and fill in the login form.  
+    This is our home page (for all unauthenticated visitors). Users can either login or register before they can proceed.
     ![welcome](/manual-ReadMe_images/home-pre-login.jpg)
     
-    NOTE: if you directly enter “/home", "/user/profile" or "/user/edit" to the url, you will not be allowed to go to those webpages, since you are not authenticated. Once you login or signup, you will be allowed to access them.  
+    example: unauthorised access denial (look at the url)
     ![welcome-unauthorised](/manual-ReadMe_images/home-unortharised.jpg)
 
 
 * #### Register page
-
-   New user's information will be entered in this webpage and delivered to the database. Inputs of all essential fields (form under "Basic Profile") will be checked before store into the database. If you enter an invalid input(e.g. empty value, invalid email format,an existed username/email, or not reach the minimum length of password, or password is not matched with you password confirmation), after click "Submit" button, warning messages will be displayed at the top of the form, and you will need to register again. Once you successfully signup, you will be redirect to the login page, with a successful message displays at the top of the login page. 
-   | register page | example: register page error |
+   This is the register page. Input validations have been implemeentd to ensure well-formedness of the user's data.  
+   If successful, the user will be redirected to the home page.
+   | register page | example: register failed |
    | -- | -- |
    |![user](/manual-ReadMe_images/signup1.jpg) | ![user](/manual-ReadMe_images/signup-error.jpg)|
 
 * #### Login page
 
-   User with an existed account can login the app via this page. Inputs of username and password must be valid and existed in our database, and they will be checked. If you enter a username which is not in the database, or an incorrect password, error messages will be showed at the top of the webpage after you click "Login" button, and you need to login again.    
-   | login page | example: login without input|
+   This is the login page. Input validations have been implemeentd to check the user's credentials.  
+   If successful, the user will be redirected to the home page.
+   | login page | example: login failed|
    |--|--|
    |![user](/manual-ReadMe_images/login.jpg) |![user-error](/manual-ReadMe_images/login-noInput.jpg)|
 
 * #### Home page
 
-   After register or login, you will be redirect to our home page. This page includes a navigation bar at the top, a logout icon (upper-right corner), which is a link to the welcome page, and three icons in the middle, each of them is a link to our profile page, matching system and review system. For now we only finished the front end for our personal profile, so to access it, you can click the profile icon or "Profile" in the navigation bar. 
+   After authentication, user will be redirected to this page.  
+   On this page, there are links to the home page and core functionalities.  
+   (For this deliverable, only profile has been implemented)
    ![user](/manual-ReadMe_images/home-login.jpg)
 
 * #### Personal Profile page
 
-   This page will show all your personal information. Similar to the home page, a navigation bar is at the top of the page, a home icon (upper-left corner) can redirect you to the home page, and a logout icon (upper-right corner) can redirect you to the welcome page. If you want to edit any of your information, click "Edit" button, then you will be redirect to edit_profile webpage. 
+   This page displays all personal information.  
+   If the user wants to edit any of them, there is an button at the buttom for that purpose.
    |||
    |--|--|
    |![user](/manual-ReadMe_images/profile1.jpg) |![user](/manual-ReadMe_images/profile2.jpg)|
 
 * #### Edit Personal Profile page
-
-   In this webpage, you can modify you personal information, and all valid modified values will be updated in the database. Similar to the profile page, a navigation bar is at the top of the page, a home icon (upper-left corner) can redirect you to the home page, and a logout icon (upper-right corner) can redirect you to the welcome page. As in the register page, inputs of fields in "Basic Profile" will be checked before the update is actually processed. If any invalid value (examples are the same for register page) is entered, after you click the "Update" button, error messages will be displayed and you will need to update your profile again. If all your input values are valid, "Update" button will redirect you to the Personal Profile page, and a message "Profile have been updated" will be showed at the top of the page. Updated information will be displayed in your profile page now. 
+   
+   This page allows user to update their profile and personal information.  
+   Just as previously, all input will be subject to validation checks
    |||
    |--|--|
    |![user](/manual-ReadMe_images/profileEdit1.jpg) |![user](/manual-ReadMe_images/profileEdit2.jpg)|

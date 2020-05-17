@@ -58,7 +58,7 @@ The commit id is **ef74058**.
 
 * #### Login page
 
-   This is the login page. Input validations have been implemeentd to check the user's credentials.  
+   This is the login page. Input validations have been implemented to check the user's credentials.  
    If successful, the user will be redirected to the home page.
    | login page | example: login failed |
    |--|--|

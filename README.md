@@ -21,8 +21,8 @@ For Deliverable 3, the first functionality has been implemented
 
 ### Catalogue
 * [Final Deliverable](#Final-Deliverable)
-* [Deliverable 3] (#Deliverable-3)
-* [Deliverable 2] (#Deliverable-2)
+* [Deliverable 3](#Deliverable-3)
+* [Deliverable 2](#Deliverable-2)
 
 
 ## Final Deliverable

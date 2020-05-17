@@ -32,21 +32,24 @@ availabile after 07 June
 
 The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.  
 The URL to the live website is https://mityit.herokuapp.com.  
-The commit id is **UPDATE LATER**.
+The commit id is **ef74058**.
 
 **User profile** is the core functionality we implemented for deliverable 3. Users can sign up or login into our app, view and modify their information in their personal profile. 
 
 ### User Profile Instruction：
 
 * #### Welcome page
-    This is our home page (for all unauthenticated visitors). Users can either login or register before they can proceed.
-    ![welcome](/manual-ReadMe_images/home-pre-login.jpg)
-    
-    example: unauthorised access denial (look at the url)
-    ![welcome-unauthorised](/manual-ReadMe_images/home-unortharised.jpg)
 
+    This is our home page (for all unauthenticated visitors).  
+    Users can either login or register before they can proceed.
+    
+    
+    | Welcome page | example: unauthorised access denial (see url)|
+    | -- | -- |
+    |![welcome](/manual-ReadMe_images/home-pre-login.jpg)|![welcome-unauthorised](/manual-ReadMe_images/home-unortharised.jpg)|
 
 * #### Register page
+
    This is the register page. Input validations have been implemeentd to ensure well-formedness of the user's data.  
    If successful, the user will be redirected to the home page.
    | register page | example: register failed |
@@ -57,7 +60,7 @@ The commit id is **UPDATE LATER**.
 
    This is the login page. Input validations have been implemeentd to check the user's credentials.  
    If successful, the user will be redirected to the home page.
-   | login page | example: login failed|
+   | login page | example: login failed |
    |--|--|
    |![user](/manual-ReadMe_images/login.jpg) |![user-error](/manual-ReadMe_images/login-noInput.jpg)|
 

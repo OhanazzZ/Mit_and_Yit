@@ -3,21 +3,23 @@ const userRouter = express.Router();
 const userController = require("../controllers/userController.js");
 
 
-// get all users (tested)
-userRouter.get("/info", userController.getAllUsers);
+// registration 
+userRouter.get("/signup", userController.signupRender);
+userRouter.post("/signup", userController.signup);
 
-// get a user by id (tested)
-userRouter.get("/info/:id", userController.getUserByID);
+// login Form
+userRouter.get('/login', userController.loginRender);
+userRouter.post('/login', userController.login);
 
-// modify a user's information by id (tested)
-userRouter.patch("/info/:id", userController.updateUserByID);
+// profile
+userRouter.get('/profile', userController.ensureAuthenticated, userController.profile);
 
-// add a user (tested)
-userRouter.get("/signup", (req, res) => {
-    res.render('signup');
-});
+// edit profile
+userRouter.get('/edit', userController.ensureAuthenticated, userController.editprofileRender);
+userRouter.post('/edit', userController.ensureAuthenticated, userController.editProfile);
 
-userRouter.post("/signup", userController.addUser);
+// logout
+userRouter.get('/logout', userController.ensureAuthenticated, userController.logout);
 
 
 module.exports = userRouter;

@@ -1,6 +1,6 @@
-const mongoose = require("mongoose");
-// Connect to MongoDB --- Replace this with your Connection String
+require('dotenv').config()
 
+const mongoose = require("mongoose");
 mongoose.connect(process.env.CONNECTION_URL || "mongodb://localhost/info30005", {
     useNewUrlParser: true,
     useCreateIndex: true,

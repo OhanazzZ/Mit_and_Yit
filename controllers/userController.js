@@ -1,198 +1,200 @@
-var users = require("../models/Users");
-
 const mongoose = require("mongoose");
 const User = mongoose.model("user");
+var expressValidator = require('express-validator');
+const passport = require('passport');
 
-// GET request - get all users
-const getAllUsers = async (req, res) => {
+// GET request - load signup page
+const signupRender = async (req, res) => {
+    res.render('signup');
+}
 
-    res.json(users); 
+// POST request - allow sign up
+const signup = async (req, res) => {
 
-    users = []  
-    try {
-        const all_users = await User.find();
-        
-        // res.render('users', {
-        //     title: 'User List',
-        //     users: all_users
-        // });
-        res.json(users); 
+    try{
+        req.checkBody('username', 'Username is required').notEmpty();
+        req.checkBody('email', 'Email is required').notEmpty();
+        req.checkBody('email', 'Email is not valid').isEmail();
+        req.checkBody('password', 'Password with minimum length 6 chars is required').isLength({min:6});
+        req.checkBody('password2', 'Password is not matched.').equals(req.body.password);
 
-    } catch (err) {
-        res.status(400);
-        return res.send("Database query failed");
-    }
-};
+        let errors = req.validationErrors();
 
-// GET request - get a user by id
-const getUserByID = async (req, res) => {
-    // const user = users.find(user => user.id === parseInt(req.params.id));
-    const userId = parseInt(req.params.id);
+        if(errors){
+            res.render('signup', {
+                errors: errors,
+            });
+        } else {
+            let user = new User();
 
-    try {
-        const users = await User.find({id: userId});
-        if (!users) {
-            res.status(400);
-            console.log("User not found");
-            return res.send("User not found");
+            user.username = req.body.username;
+            user.email = req.body.email;
+            user.password = req.body.password;
+            user.gender = req.body.gender;
+            user.cuisine = req.body.cuisine;
+            user.allergy = req.body.allergy;
+            user.religion = req.body.religion;
+            user.lunch = req.body.lunch;
+            user.dinner = req.body.dinner;
+            user.coffee = req.body.coffee;
+
+            user.save(function(err){
+                if(err){
+                    if (err.name === 'MongoError' && err.code === 11000) {
+                        res.render('signup', {msg:'Username/email already existd.'})
+                    } 
+                    return;
+                } else {
+                    id = user._id;
+                    req.user = user;
+                    res.render('login', {msg:'You have successfully created an account'});
+                }
+            })
         }
-        
-        const user = users[0];
-        console.log("User found!!!", user);
-        
-        res.send(user);
-        // res.render('userupdateform', {
-        //     // user
-        // });
-    } catch (err) {
+    }catch (err) {
         res.status(400);
         console.log(err);
         return res.send("Database query failed");
     }
 };
 
-// PATCH request - modify aa user's information by id
-const updateUserByID = async (req, res) => {
-    const new_user = req.body;
-    const user = users.find(user => user.id === parseInt(req.params.id));
-    if (!user) {
-        res.status(400).send(
-            {msg: `No user with the id of ${req.params.id}`}
-        )
-    }
-    
-    Object.assign(user, new_user);
-    res.send(user);
+// GET request - load login page
+const loginRender = async (req, res) => {
+    res.render('login');
+}
 
-    const userId = req.params.id;
-  
-    try {
-        const users = await user.find({id: userId});
-        if (!users) {
-            res.status(400);
-            console.log("user not found");
-            return res.send("user not found");
+// POST request - allow login
+const login = async (req, res, next) => {
+
+    req.checkBody('username', 'Username is required').notEmpty();
+    req.checkBody('password', 'Password is required').notEmpty();
+
+    let errors = req.validationErrors();
+
+        if(errors){
+            res.render('login', {
+                errors: errors
+            });
+        } else {
+            const username = req.body.username;
+            const password = req.body.password;
+            const users = await User.find({username: username});
+            const user = users[0];
+
+            if(!user){
+                res.render('login', {msg:'Username not found'})
+            }else if(password!=user.password){
+                res.render('login', {msg:'Incorrect password'})
+            }else{
+                passport.authenticate('local', {
+                    successRedirect:'/home',
+                    failureRedirect:'/user/login',
+                    failureFlash: false
+            })(req, res, next);
         }
-        
-        const user = users[0];
-        console.log("user found!!!", user);
-        
-        // user[sth] = new_user["sth"];
-        
-        await user.save();
-        // res.render('index', {
-        //     title: 'Library App'
-        // });
-        res.send("working on this feature");
+    }
+}
 
+// logout
+const logout = (req, res) => {
+    req.logout();
+    res.redirect('/');
+}
+
+// GET request - load profile page
+const profile = async (req, res) => {
+    const user = req.user;
+    res.render('profile', {user: user});
+}
+
+// GET request - load edit profile page
+const editprofileRender = async (req, res) => {
+    const user = req.user;
+    res.render('edit_profile', {user: user});
+}
+
+// POST request - allow editing profile
+const editProfile = async (req, res) => {
+    try{
+        const user = req.user;
+
+        req.checkBody('username', 'Username cannot be empty').notEmpty();
+        req.checkBody('email', 'Email is required').isEmail();
+        req.checkBody('password', 'Password cannot be empty').notEmpty();
+        req.checkBody('password', 'Password is too short').isLength({min:6})
+        req.checkBody('password2', 'Password is not matched.').equals(req.body.password);
+
+        let errors = req.validationErrors();
+
+        if(errors){
+            res.render('edit_profile', {
+                errors: errors,
+                user: user
+            });
+        } else {
+
+            let query = {_id: req.user._id};
+
+            user.username = req.body.username;
+            user.email = req.body.email;
+            user.password = req.body.password;
+            user.password2 = req.body.password2;
+            user.gender = req.body.gender;
+            user.cuisine = req.body.cuisine;
+            user.allergy = req.body.allergy;
+            user.religion = req.body.religion;
+            user.major = req.body.major;
+            user.level = req.body.level;
+            user.hobbies = req.body.hobbies;
+            user.career = req.body.career;
+            user.lunch = req.body.lunch;
+            user.dinner = req.body.dinner;
+            user.coffee = req.body.coffee;
+
+            User.updateOne(query, user, function(err){
+                if(err){
+                    if (err.name === 'MongoError' && err.code === 11000) {
+                        res.render('edit_profile', {
+                            msg:'Username/email already existd.',
+                            user: user
+                        })
+                    } 
+                    return;
+                } else {
+                    res.render('profile', {
+                        msg:'Profile has been updated.',
+                        user: user
+                    });
+                }
+            })
+        }
     } catch (err) {
         res.status(400);
         console.log(err);
         return res.send("Database query failed");
     }
-  };
-  
-// POST request - add a user
-const addUser = async (req, res) => {
-    // const newUser = Object.assign({id: users.length + 1}, req.body);
+}
 
-    // users.push(newUser);
-    // res.send(users);
-    res.send("working on this feature");
-};
-
-
-module.exports = {
-  getAllUsers,
-  getUserByID,
-  updateUserByID,
-  addUser,
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* var users = require("../models/Users");
-
-// GET request - get all users
-const getAllUsers = (req, res) => {
-    res.json(users); 
-};
-
-// GET request - get a user by id
-const getUserByID = (req, res) => {
-    const user = users.find(user => user.id === parseInt(req.params.id));
-
-    if (user) {
-        res.send(user);
+//Access Control
+function ensureAuthenticated(req, res, next) {
+    if(req.isAuthenticated()){
+        return next();
     } else {
-        res.status(400).send(
-            {msg: `No user with the id of ${req.params.id}`}
-        )}
-};
-
-// PATCH request - modify aa user's information by id
-const updateUserByID = (req, res) => {
-    const new_user = req.body;
-    const user = users.find(user => user.id === parseInt(req.params.id));
-    if (!user) {
-        res.status(400).send(
-            {msg: `No user with the id of ${req.params.id}`}
-        )
+        res.render('index', {
+            msg: "Please register or login"
+        })
     }
-    
-    Object.assign(user, new_user);
-    res.send(user);
-  };
-  
-// POST request - add a user
-const addUser = (req, res) => {
-    const newUser = Object.assign({id: users.length + 1}, req.body);
-
-    users.push(newUser);
-    res.send(users);
-};
+}
 
 
 module.exports = {
-  getAllUsers,
-  getUserByID,
-  updateUserByID,
-  addUser,
+    signupRender,
+    signup,
+    loginRender,
+    login,
+    profile,
+    editprofileRender,
+    editProfile,
+    logout,
+    ensureAuthenticated
 };
- */

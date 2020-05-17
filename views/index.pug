@@ -1,15 +1,15 @@
 extends layout
 
 block content
+
     .container
         h1 Welcome to Mit&Yit
+        div(class='msg') #{msg}
         section#register
             a(href='/user/signup')
-                #icon
-                    img.register(src='/images/register.png', alt='register icon')
+                img#icon.register(src='/images/register.png', alt='register icon')
             p Register
         aside#login
             a(href='/user/login')
-                #icon
-                    img.login(src='/images/login.png', alt='login icon')
+                img#icon.login(src='/images/login.png', alt='login icon')
             p Login

@@ -1,34 +1,39 @@
 extends layout
 
 block content
+    .container
+        aside#logouticon
+            a(href='/user/logout')
+                img.logout(src='/images/logout.png', alt='logout icon')
+            p Logout
     nav#navbar
         .container
             ul
                 li
                     a(href='/home') Home
                 li
-                    a(href='#') Profile
+                    a(href='/user/profile') Profile
                 li
                     a(href='#') Matching
                 li
                     a(href='#') Review
 
-    .container#home
+    .container#hometag
         h1 Welcome to Mit&Yit
 
         ul.tag(style='list-style-type:none;')
             li
-                a(href='https://mityit.herokuapp.com/user/info')
+                a(href='/user/profile')
                     #icon
                         img.user(src='/images/user.png', alt='user icon')
-                p Personal Profile
+                p Profile
             li
-                a(href='https://mityit.herokuapp.com/match/1')
+                a(href='#')
                     #icon
                         img.match(src='/images/match.png', alt='match icon')
-                p Customized Matching
+                p Matching
             li
-                a(href='https://mityit.herokuapp.com/review/1')
+                a(href='#')
                     #icon
                         img.review(src='/images/review.png', alt='review icon')
                 p Review

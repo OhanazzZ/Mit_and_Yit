@@ -48,10 +48,10 @@ block content
                     input.form-control(name='password2',type='password', value=user.password)
                 #form-group
                     label Gender:
-                    select(name='gender', value=user.gender)
-                        option(value='male') Male
-                        option(value='female') Female
-                        option(value='other') Other
+                    select(name='gender', onchange=user.gender)
+                        option(value='Male', selected = (user.gender == 'Male')) Male
+                        option(value='Female',selected = (user.gender == 'Female')) Female
+                        option(value='Other',selected = (user.gender == 'Other')) Other
 
             h2 Cuisine Preference
             section#cuisine
@@ -73,20 +73,20 @@ block content
                 #form-group
                     label Lunch:
                     select(name='lunch', value=user.lunch)
-                        option(value='Yes') Yes
-                        option(value='No') No
+                        option(value='Yes', selected = (user.lunch == 'Yes')) Yes
+                        option(value='No', selected = (user.lunch == 'No')) No
 
                 #form-group
                     label Dinner:
                     select(name='dinner', value=user.dinner)
-                        option(value='Yes') Yes
-                        option(value='No') No
+                        option(value='Yes', selected = (user.dinner == 'Yes')) Yes
+                        option(value='No', selected = (user.dinner == 'No')) No
 
                 #form-group
                     label Coffee:
                     select(name='coffee', value=user.coffee)
-                        option(value='Yes') Yes
-                        option(value='No') No
+                        option(value='Yes',selected = (user.coffee == 'Yes')) Yes
+                        option(value='No',selected = (user.coffee == 'No')) No
 
 
             h2 Additional Information
@@ -110,3 +110,4 @@ block content
             section#profilebutton
                 br
                 input.btn.btn-primary(class="button",type='submit',value='Update')
+

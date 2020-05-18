@@ -8,8 +8,8 @@ block content
         section
             != messages('message', locals)
             if errors
-                 each error, i in errors
-                     div(class="alert") #{error.msg}
+                each error, i in errors
+                    div(class="alert") #{error.msg}
 
             form(id='myform' method="POST" action='/user/signup')
 
@@ -30,6 +30,7 @@ block content
                     #form-group
                         label Gender:
                         select(name='gender')
+                            option(value='', selected, disabled, hidden) Choose here
                             option(value='Male') Male
                             option(value='Female') Female
                             option(value='Other') Other

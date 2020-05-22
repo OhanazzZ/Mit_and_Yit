@@ -1,0 +1,33 @@
+/* css for index page*/
+
+/* register section on index page*/
+#register{
+    float:left;
+    width:50%;
+    color:#333333;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10%;
+}
+/* register icon on index page*/
+#icon.register {
+    width: 50%;
+    height: 50%;
+    color:#333333;
+}
+
+/* login section on index page */
+#login{
+    float:right;
+    width:50%;
+    color:#333333;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10%;
+}
+/* login icon on index page*/
+#icon.login {
+    width: 50%;
+    height: 50%;
+    color: #333333;
+}

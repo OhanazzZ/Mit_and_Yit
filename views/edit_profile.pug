@@ -2,24 +2,23 @@ extends layout
 
 block content
     .container
-        section#homeicon
-            a(href='/home')
-                img.home(src='/images/home.png', alt='home icon')
-            p Home
-        aside#logouticon
-            a(href='/user/logout')
-                img.logout(src='/images/logout.png', alt='logout icon')
-            p Logout
-    nav#navbar
-
-        .container
-            ul
-                li
-                    a(href='/user/profile') Profile
-                li
-                    a(href='#') Matching
-                li
-                    a(href='#') Review
+            section#homeicon
+                a(href='/home')
+                    img.home(src='/images/home.png', alt='home icon')
+                p Home
+            nav#navbar
+                .container
+                    ul
+                        li
+                            a(href='/user/profile') Profile&nbsp;
+                        li
+                            a(href='#') Matching&nbsp;
+                        li
+                            a(href='/review') Review&nbsp;
+            section#logouticon
+                a(href='/user/logout')
+                    img.logout(src='/images/logout.png', alt='logout icon')
+                p Logout
 
     h1 Personal Profile
     h5 (* Must provide field)
@@ -107,7 +106,6 @@ block content
                     label Career:
                     input.form-control(name='career', type='text', value=user.career)
 
-            section#profilebutton
-                br
-                input.btn.btn-primary(class="button",type='submit',value='Update')
+            br
+            input#updatebutton.btn.btn-primary(class="button",type='submit',value='Update')
 

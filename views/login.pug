@@ -2,6 +2,11 @@ extends layout
 
 block content
 
+    .container
+        section#homeicon
+            a(href='/')
+                img.home(src='/images/home.png', alt='home icon')
+
     .container#loginform
         h1 Hello
         != messages('message', locals)

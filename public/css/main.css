@@ -41,7 +41,7 @@ h5 {
     opacity: 1;
     width: 80%;
     margin:auto;
-    overflow:hidden;
+    overflow:auto;
 
 }
 
@@ -57,270 +57,24 @@ h5 {
 }
 
 /* button design for all buttons */
-.button{
-    color:#ffffff;
-    background-color: #39566c;
-    padding:10px 15px;
-    border:5px black;
-    font-size: large;
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
     font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
 }
 
-.button:hover{
+.btn:hover{
     background-color: #9AB2B6;
     color:#333333;
 }
 
-/* register section on index page*/
-#register{
-    float:left;
-    width:50%;
-    color:#333333;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 10%;
-}
-/* register icon on index page*/
-#icon.register {
-    width: 50%;
-    height: 50%;
-    color:#333333;
-}
 
-/* login section on index page */
-#login{
-    float:right;
-    width:50%;
-    color:#333333;
-    box-sizing: border-box;
-    text-align: center;
-    padding: 10%;
-}
-/* login icon on index page*/
-#icon.login {
-    width: 50%;
-    height: 50%;
-    color:#333333;
-}
-
-/* login form on login page*/
-#loginform{
-    width: 35%;
-    background-color: rgba(255,255,255, 0.9);
-    margin-top: 10%;
-    padding-bottom: 50px;
-    border-style: double;
-    border-color: #39566c;
-    border-width: 7px;
-    text-align: center;
-
-}
-
-
-/* form on signup page and edit page*/
-form{
-    color:#333333;
-    margin-top: 20px;
-}
-
-.form-group{
-    padding-bottom:20px;
-
-}
-label {
-    display: inline-block;
-    padding: 3px 3px;
-    vertical-align: middle;
-    width: 150px;
-}
-input {
-    width: 55%;
-    padding: 10px 0px 10px 5px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: transparent;
-    color: #39566c;
-    font-size: large;
-    border: none;
-    border-bottom: 2px solid black;
-}
-input:focus {
-    border: 3px solid darkslategrey;
-    color: #333333;
-    font-size: large;
-}
-/* textarea type in form */
-textarea {
-    width: 55%;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    background-color: transparent;
-    color: #39566c;
-    font-size: large;
-    border: 2px solid #f4f4f4;
-    border-radius: 4px;
-    resize: none;
-}
-/* select type in form */
-select{
-    width: 25%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: transparent;
-    color: #39566c;
-    font-size: large;
-}
-
-/* form design on signup, profile, edit profile page */
-.profileform{
-    background-color: rgba(255,255,255, 0.9);
-    width: 40%;
-    border-style: double;
-    border-color: #39566c;
-    border-width: 7px;
-    padding-bottom: 50px;
-}
-/* section in form on signup, profile, edit profile page */
-#basicprofile{
-    text-align:left;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 10px;
-}
-#cuisine{
-    text-align:left;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 10px;
-}
-#availability{
-    text-align:left;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 10px;
-}
-#aditional{
-    text-align:left;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 10px;
-}
-
-/* home icon in navbar*/
-#homeicon{
-    width: 90%;
-    position: absolute;
-    top: 4%;
-    left: 6%;
-}
-.home{
-    width: 3%;
-    height: 5%;
-
-}
-
-/* logout icon in navbar */
-#logouticon{
-    width: 10%;
-    position: absolute;
-    top: 4%;
-    right: 0.5%;
-
-}
-.logout{
-    width: 30%;
-    height: 50%;
-}
-
-/* navbar */
-#navbar{
-    background-color:transparent;
-    text-align: center;
-
-}
-#navbar ul{
-    padding: 0;
-    list-style: none;
-}
-#navbar li{
-    display: inline;
-}
-#navbar a{
-    color:#333333;
-    text-decoration: none;
-    font-size:18px;
-    padding-right:15px;
-}
-#navbar a:hover{
-    color: lightcoral;
-    text-decoration: none;
-    font-size:18px;
-    padding-right:15px;
-}
-
-/* tag list on home page */
-#hometag {
-    text-align: center;
-    position: relative;
-}
-
-.tag {
-    position: relative;
-    display: inline;
-    color:#333333;
-}
-
-.user {
-    width: 10%;
-    height: 10%;
-}
-
-.match {
-    width: 10%;
-    height: 10%;
-}
-
-.review {
-    width: 10%;
-    height: 10%;
-}
-
-
-/* profile section on profile page */
-#profile{
-    background-color: rgba(255,255,255, 0.9);
-    margin-left: 23%;
-    margin-right: 23%;
-    border-style: double;
-    border-color: #39566c;
-    border-width: 7px;
-    padding-bottom: 3%;
-}
-/* table in profile section on profile page */
-table{
-    width: 100%;
-    position: center;
-    padding: 10% 5% 10% 5%;
-}
-
-th, td{
-    padding: 3%;
-}
-
-th{
-    color: #39566c;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: x-large;
-    text-align: center;
-}
-
-/* button section on signup, profile and eit profile page */
-#profilebutton{
-    text-align: center;
-}
-
-/* alert on signup and edit profile page */
+/* alert  */
 .alert {
     text-align: center;
     background: lightcoral;
@@ -330,7 +84,7 @@ th{
     margin: 5px;
 }
 
-/* message after edit profile on profile page */
+/* message */
 .msg{
     text-align: center;
     background-size: cover;
@@ -338,7 +92,6 @@ th{
     padding: 5px;
     margin: 5px;
 }
-
 
 /* main footer on every page*/
 #main-footer{

@@ -2,78 +2,163 @@ extends layout
 
 block content
     .container
-        section#homeicon
-            a(href='/home')
-                img.home(src='/images/home.png', alt='home icon')
-            p Home
-        aside#logouticon
-            a(href='/user/logout')
-                img.logout(src='/images/logout.png', alt='logout icon')
-            p Logout
-    nav#navbar
-        .container
-            ul
-                li
-                    a(href='/user/profile') Profile&nbsp;
-                li
-                    a(href='#') Matching&nbsp;
-                li
-                    a(href='#') Review&nbsp;
+            section#homeicon
+                a(href='/home')
+                    img.home(src='/images/home.png', alt='home icon')
+                p Home
+            nav#navbar
+                .container
+                    ul
+                        li
+                            a(href='/user/profile') Profile&nbsp;
+                        li
+                            a(href='/match') Matching&nbsp;
+                        li
+                            a(href='/review') Review&nbsp;
+            section#logouticon
+                a(href='/user/logout')
+                    img.logout(src='/images/logout.png', alt='logout icon')
+                p Logout
+
+
 
     h1 Personal Profile
     div(class='msg') #{msg}
     .container
+
         section#profile
-            table
-                tbody
-                    tr
-                        th(colspan='2') Basic Profile
-                    tr
-                        td#label Username:
-                        td#info #{user.username}
-                    tr
-                        td Email:
-                        td #{user.email}
-                    tr
-                        td Gender:
-                        td #{user.gender}
-                    tr
-                        th(colspan='2') Cuisine Preference
-                    tr
-                        td Cuisine:
-                        td #{user.cuisine}
-                    tr
-                        td Allergy:
-                        td #{user.allergy}
-                    tr
-                        td Religion:
-                        td #{user.religion}
-                    tr
-                        th(colspan='2') Availability
-                    tr
-                        td Lunch:
-                        td #{user.lunch}
-                    tr
-                        td Dinner:
-                        td #{user.dinner}
-                    tr
-                        td Coffee:
-                        td #{user.coffee}
-                    tr
-                        th(colspan='2') Additional Information
-                    tr
-                        td Major:
-                        td #{user.major}
-                    tr
-                        td Level:
-                        td #{user.level}
-                    tr
-                        td Hobbies:
-                        td #{user.hobbies}
-                    tr
-                        td Career:
-                        td #{user.career}
-                        
-            section#profilebutton
-                br
-                a.btn.btn-primary(href='/user/edit',class="button") Edit
+            .tab
+                button#defaultOpen.tablinks(onclick="openProfile(event, 'BasicProfile')") Basic Profile
+                button.tablinks(onclick="openProfile(event, 'CuisinePreference')") Cuisine Preference
+                button.tablinks(onclick="openProfile(event, 'Availability')") Availability
+                button.tablinks(onclick="openProfile(event, 'AdditionalInformation')") Additional Information
+            #BasicProfile.tabcontent
+                table
+                    tbody
+                        tr
+                            th(colspan='2') Basic Profile
+                        tr
+                            td Username:
+                            td#tdinfo #{user.username}
+                        tr
+                            td Email:
+                            td#tdinfo #{user.email}
+                        tr
+                            td Gender:
+                            td#tdinfo #{user.gender}
+            #CuisinePreference.tabcontent
+                table
+                    tbody
+                        tr
+                            th(colspan='2') Cuisine Preference
+                        tr
+                            td Cuisine:
+                            td#tdinfo #{user.cuisine}
+                        tr
+                            td Allergy:
+                            td#tdinfo #{user.allergy}
+                        tr
+                            td Religion:
+                            td#tdinfo #{user.religion}
+            #Availability.tabcontent
+                table
+                    tbody
+                        tr
+                            th(colspan='2') Availability
+                        tr
+                            td Lunch:
+                            td#tdinfo #{user.lunch}
+                        tr
+                            td Dinner:
+                            td#tdinfo #{user.dinner}
+                        tr
+                            td Coffee:
+                            td#tdinfo #{user.coffee}
+
+            #AdditionalInformation.tabcontent
+                table
+                    tbody
+                        tr
+                            th(colspan='2') Additional Information
+                        tr
+                            td Major:
+                            td#tdinfo #{user.major}
+                        tr
+                            td Level:
+                            td#tdinfo #{user.level}
+                        tr
+                            td Hobbies:
+                            td#tdinfo #{user.hobbies}
+                        tr
+                            td Career:
+                            td#tdinfo #{user.career}
+
+                    script.
+                            function openProfile(evt, secName) {
+                                var i, tabcontent, tablinks;
+                                tabcontent = document.getElementsByClassName("tabcontent");
+                                for (i = 0; i < tabcontent.length; i++) {
+                                    tabcontent[i].style.display = "none";
+                                }
+                                tablinks = document.getElementsByClassName("tablinks");
+                                for (i = 0; i < tablinks.length; i++) {
+                                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                                }
+                                document.getElementById(secName).style.display = "block";
+                                evt.currentTarget.className += " active";
+                            }
+                            // Get the element with id="defaultOpen" and click on it
+                            document.getElementById("defaultOpen").click();
+
+    section#editbutton
+        a.btn.btn-primary(href='/user/edit',class="button") Edit
+
+//-             table
+//-                 tbody
+//-                     tr
+//-                         th(colspan='2') Basic Profile
+//-                     tr
+//-                         td Username:
+//-                         td#tdinfo #{user.username}
+//-                     tr
+//-                         td Email:
+//-                         td#tdinfo #{user.email}
+//-                     tr
+//-                         td Gender:
+//-                         td#tdinfo #{user.gender}
+//-                     tr
+//-                         th(colspan='2') Cuisine Preference
+//-                     tr
+//-                         td Cuisine:
+//-                         td#tdinfo #{user.cuisine}
+//-                     tr
+//-                         td Allergy:
+//-                         td#tdinfo #{user.allergy}
+//-                     tr
+//-                         td Religion:
+//-                         td#tdinfo #{user.religion}
+//-                     tr
+//-                         th(colspan='2') Availability
+//-                     tr
+//-                         td Lunch:
+//-                         td#tdinfo #{user.lunch}
+//-                     tr
+//-                         td Dinner:
+//-                         td#tdinfo #{user.dinner}
+//-                     tr
+//-                         td Coffee:
+//-                         td#tdinfo #{user.coffee}
+//-                     tr
+//-                         th(colspan='2') Additional Information
+//-                     tr
+//-                         td Major:
+//-                         td#tdinfo #{user.major}
+//-                     tr
+//-                         td Level:
+//-                         td#tdinfo #{user.level}
+//-                     tr
+//-                         td Hobbies:
+//-                         td#tdinfo #{user.hobbies}
+//-                     tr
+//-                         td Career:
+//-                         td#tdinfo #{user.career}

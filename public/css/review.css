@@ -1,0 +1,217 @@
+/* css for review, write review and view review pages*/
+
+
+/* write review section on review page*/
+#writereview{
+    float:left;
+    width:50%;
+    color:#333333;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5%;
+}
+/* write review icon on review page*/
+#icon.writereview {
+    width: 50%;
+    height: 50%;
+}
+
+/* check review section on review page */
+#viewreview{
+    float:right;
+    width:50%;
+    color:#333333;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 5%;
+}
+/* check review icon on review page*/
+#icon.viewreview {
+    width: 50%;
+    height: 50%;
+}
+
+
+/* review section on write review page*/
+#review{
+    box-sizing: border-box;
+    background-color: rgba(255,255,255, 0.9);
+    width: 50%;
+    text-align: center;
+    padding: 3%;
+}
+
+label.review {
+    position: relative;
+    color: #39566c;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: x-large;
+    display: inline;
+}
+
+
+.rating-group {
+    display: inline-flex;
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    text-align: center;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 50%;
+}
+
+/* make hover effect work properly in IE */
+.rating__icon {
+    pointer-events: none;
+}
+
+/* hide radio inputs */
+.rating__input {
+    position: absolute;
+    left: -9999px;
+}
+
+/* hide 'none' input from screenreaders */
+.rating__input--none {
+    display: none
+}
+
+/* set icon padding and size */
+.rating__label {
+    cursor: pointer;
+    /* if you change the left/right padding, update the margin-right property of .rating__label--half as well. */
+    padding: 5px;
+    font-size: 30px;
+}
+
+/* set default star color */
+.rating__icon--star {
+    color: orange;
+    padding: 1%;
+}
+
+/* if any input is checked, make its following siblings grey */
+.rating__input:checked ~ .rating__label .rating__icon--star {
+    color: #ddd;
+}
+
+/* make all stars orange on rating group hover */
+.rating-group:hover .rating__label .rating__icon--star {
+    color: orange;
+}
+
+/* make hovered input's following siblings grey on hover */
+.rating__input:hover ~ .rating__label .rating__icon--star {
+    color: #ddd;
+}
+
+/* username box in form */
+#reviewname{
+    border: 2px solid #39566c;
+}
+
+/* textarea type in form */
+textarea {
+    width: 80%;
+    height: 200px;
+    margin-top: 10px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #39566c;
+    font-size: large;
+    border: 2px solid #39566c;
+    border-radius: 4px;
+    resize: none;
+}
+
+/* tags */
+#tag{
+    border: 2px solid #39566c;
+    width: 30%;
+    text-align: center;
+}
+
+#kind {
+    border-color: #4CAF50;
+    color: green;
+}
+#kind:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#boring {
+    border-color: #2196F3;
+    color: dodgerblue
+}
+#boring:hover {
+    background: #2196F3;
+    color: white;
+}
+
+#attractive {
+    border-color: #ff9800;
+    color: orange;
+}
+#attractive:hover {
+    background: #ff9800;
+    color: white;
+}
+
+#out-going {
+    border-color: #f44336;
+    color: red
+}
+#out-going:hover {
+    background: #f44336;
+    color: white;
+}
+
+#humorous {
+    border-color: #e7e7e7;
+    color: black;
+}
+#humorous:hover {
+    background: #e7e7e7;
+}
+
+#gentle {
+    border-color: plum;
+    color: mediumpurple;
+}
+#gentle:hover {
+    background: plum;
+    color: white;
+}
+
+#punctual {
+    border-color: rosybrown;
+    color: brown;
+}
+#punctual:hover {
+    background: rosybrown;
+    color: white;
+}
+
+#easy-going {
+    border-color: yellowgreen;
+    color: yellowgreen;
+}
+#easy-going:hover {
+    background: yellowgreen;
+    color: white;
+}
+
+#reviewbutton {
+    width: 25%;
+}
+
+
+
+

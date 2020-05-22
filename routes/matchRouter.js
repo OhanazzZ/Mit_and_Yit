@@ -2,6 +2,9 @@ const express = require('express');
 const matchRouter = express.Router();
 const matchController = require("../controllers/matchController.js");
 
+matchRouter.get("/", (req, res) => {
+    res.render('match');
+});
 // find matches for a user (tested)
 matchRouter.get('/:id', matchController.findMatch);
 

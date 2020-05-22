@@ -1,15 +1,22 @@
 extends layout
 
 block content
-    h1 Welcome
-    h5 (* Must provide field)
+    .container
+        section#homeicon
+            a(href='/')
+                img.home(src='/images/home.png', alt='home icon')
+    br
+    br
+
     .container.profileform
+        h1 Welcome
+        h5 (* Must provide field)
         div(class='msg') #{msg}
         section
             != messages('message', locals)
             if errors
-                each error, i in errors
-                    div(class="alert") #{error.msg}
+                 each error, i in errors
+                     div(class="alert") #{error.msg}
 
             form(id='myform' method="POST" action='/user/signup')
 
@@ -65,6 +72,5 @@ block content
                             option(value='Yes') Yes
                             option(value='No') No
 
-                section#profilebutton
-                    br
-                    input.btn.btn-primary(class="button",type='submit',value='Submit')
+                br
+                input.btn.btn-primary#submitbutton(class="button",type='submit',value='Submit')

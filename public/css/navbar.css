@@ -1,0 +1,55 @@
+/* css for navbar on most of pages*/
+
+/* home icon in navbar*/
+#homeicon{
+    float: left;
+    width: 90%;
+    position: absolute;
+    top: 4%;
+    left: 6%;
+}
+.home{
+    width: 3%;
+    height: 5%;
+
+}
+
+/* logout icon in navbar */
+#logouticon{
+    float: right;
+    width: 10%;
+    position: absolute;
+    top: 4%;
+    right: 0.5%;
+
+}
+.logout{
+    width: 30%;
+    height: 50%;
+}
+
+/* navbar */
+#navbar{
+    background-color:transparent;
+    text-align: center;
+
+}
+#navbar ul{
+    padding: 0;
+    list-style: none;
+}
+#navbar li{
+    display: inline;
+}
+#navbar a{
+    color:#333333;
+    text-decoration: none;
+    font-size:18px;
+    padding-right:15px;
+}
+#navbar a:hover{
+    color: lightcoral;
+    text-decoration: none;
+    font-size:18px;
+    padding-right:15px;
+}

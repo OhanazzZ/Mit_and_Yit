@@ -17,7 +17,6 @@ The web app we are creating is a **social dining platform**, with the goal to **
 | Match Finding            | Match like-minded users based on availability, food preference and other criteria |  /match  |
 | Review Posting           | Allow users to write and update review; reviews are linked to user profiles        |  /review | 
 
-For Deliverable 3, the first functionality has been implemented
 
 ### Catalogue
 * [Final Deliverable](#Final-Deliverable)

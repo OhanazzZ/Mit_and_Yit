@@ -1,49 +1,5 @@
 /* css for signup, profile and edit profile page*/
 
-/* form on signup page and edit page*/
-form{
-    color:#333333;
-    margin-top: 20px;
-}
-
-.form-group{
-    padding-bottom:20px;
-}
-
-label {
-    display: inline-block;
-    padding: 5px 5px;
-    vertical-align: middle;
-    width: 150px;
-}
-input {
-    width: 55%;
-    padding: 10px 0px 10px 5px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: transparent;
-    color: #39566c;
-    font-size: large;
-    border: none;
-    border-bottom: 2px solid black;
-}
-input:focus {
-    border: 3px solid darkslategrey;
-    color: #333333;
-    font-size: large;
-}
-
-/* select type in form */
-select{
-    width: 40%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: transparent;
-    color: #39566c;
-    font-size: large;
-}
-
 /* form design on signup, profile, edit profile page */
 .profileform{
     background-color: rgba(255,255,255, 0.9);
@@ -51,6 +7,7 @@ select{
     border-style: double;
     border-color: #39566c;
     border-width: 7px;
+    margin-top: 8%;
     padding-bottom: 50px;
 }
 /* section in form on signup, profile, edit profile page */
@@ -79,11 +36,23 @@ select{
     padding-bottom: 10px;
 }
 
+/* ------------------------------- SIGNUP page -------------------------------*/
+/* submit button signup page */
+#submitbutton{
+    text-align: center;
+    padding: 3%;
+    width: 30%;
+    margin-left: 35%;
+}
+
+
+/* ------------------------------- PROFILE page -------------------------------*/
 /* profile section on profile page */
 #profile{
     margin-left: 15%;
-    margin-right: 15%;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
+    width: 70%;
+    display: inline-flex;
 }
 /* table in profile section on profile page */
 table{
@@ -94,11 +63,9 @@ table{
 #tdinfo{
     font-weight: normal;
 }
-
 th, td{
     padding: 3%;
 }
-
 th{
     color: #39566c;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -106,9 +73,7 @@ th{
     text-align: center;
 }
 
-
-* {box-sizing: border-box}
-/* Style the tab */
+/* tab */
 .tab {
     float: left;
     background-color: rgba(255,255,255, 0.9);
@@ -119,7 +84,7 @@ th{
 
 }
 
-/* Style the buttons that are used to open the tab content */
+/* tab buttons */
 .tab button {
     color: #39566c;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -134,17 +99,17 @@ th{
     transition: 0.3s;
 }
 
-/* Change background color of buttons on hover */
+/* tab buttons on hover */
 .tab button:hover {
     background-color: #ddd;
 }
 
-/* Create an active/current "tab button" class */
+/* active tab button */
 .tab button.active {
     background-color: #ccc;
 }
 
-/* Style the tab content */
+/* tab content */
 .tabcontent {
     float: left;
     padding: 0px 12px;
@@ -155,20 +120,13 @@ th{
     border-left: none;
 }
 
-/* submit button signup page */
-#submitbutton{
-    text-align: center;
-    padding: 3%;
-    width: 30%;
-    margin-left: 35%;
-}
-
 /* edit button on profile page */
 #editbutton{
     margin-top: 3%;
-
     text-align: center;
 }
+
+/* ------------------------------- EDIT PROFILE page -------------------------------*/
 /* update button on eit profile page */
 #updatebutton{
     text-align: center;

@@ -2,18 +2,20 @@ extends layout
 
 block content
 
-    .container
+    .container#navbarsec
         section#homeicon
-            a(href='/')
+            a(href='/home')
                 img.home(src='/images/home.png', alt='home icon')
-
+    
     .container#loginform
         h1 Hello
-        != messages('message', locals)
-        if errors
-            each error, i in errors
-                div(class="alert") #{error.msg}
-        div(class='msg') #{msg}
+        section#errormsg
+            != messages('message', locals)
+            if errors
+                each error, i in errors
+                    div(class="alert") #{error.msg}
+            div(class='msg') #{msg}
+        
         form(method='POST', action='/user/login')
             #form-group
                 label Username:&nbsp;

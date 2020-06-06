@@ -7,11 +7,18 @@ body {
     background: url(../images/brunch5.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: cover;
+    background-position: center 0;
+    box-sizing: border-box;
     font-weight: bold;
     font-size: large;
     width: 100vw;
     height: 100vh;
+    min-width: 1000px;
+}
+
+.content{
+    min-height: calc(100vh - 70px);
 }
 
 
@@ -56,6 +63,7 @@ h5 {
     filter:alpha(opacity=100);
 }
 
+
 /* button design for all buttons */
 .btn {
     border: 2px solid black;
@@ -67,10 +75,63 @@ h5 {
     cursor: pointer;
     border-radius: 8px;
 }
-
 .btn:hover{
     background-color: #9AB2B6;
     color:#333333;
+}
+a:link {
+    text-decoration: none;
+}
+/* back button section on most pages */
+#backbutton{
+    float: left;
+    width: 100%;
+}
+
+
+/* form design for all forms*/
+form{
+    color:#333333;
+    margin-top: 20px;
+}
+.form-group{
+    padding-bottom:10px;
+}
+label {
+    display: inline-block;
+    padding: 5px 5px;
+    vertical-align: middle;
+    width: 150px;
+}
+input {
+    width: 55%;
+    padding: 10px 0px 10px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #39566c;
+    font-size: large;
+    border: none;
+    border-bottom: 2px solid black;
+}
+input:focus {
+    border: 3px solid darkslategrey;
+    color: #333333;
+    font-size: large;
+}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* select type in form */
+select{
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    color: #39566c;
+    font-size: large;
 }
 
 
@@ -80,8 +141,8 @@ h5 {
     background: lightcoral;
     background-size: cover;
     color: #fff;
-    padding: 5px;
-    margin: 5px;
+    padding: 1%;
+    margin: 1%;
 }
 
 /* message */
@@ -89,14 +150,23 @@ h5 {
     text-align: center;
     background-size: cover;
     color: #39566c;
-    padding: 5px;
-    margin: 5px;
+    font-size: x-large;
+    padding: 2%;
+    margin: 3%;
+}
+
+#errormsg{
+    margin-top: 8%;
 }
 
 /* main footer on every page*/
 #main-footer{
     color: #333333;
     text-align: center;
-    padding:20px;
-    margin-top:40px;
+    background-color: rgba(255,255,255, 0.6);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
 }

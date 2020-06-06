@@ -1,6 +1,6 @@
 /* css for review, write review and view review pages*/
 
-
+/* ------------------------------- REVIEW page -------------------------------*/
 /* write review section on review page*/
 #writereview{
     float:left;
@@ -31,14 +31,15 @@
     height: 50%;
 }
 
-
+/* ----------------------------- WRITE REVIEW page -----------------------------*/
 /* review section on write review page*/
-#review{
+#writereviewsec{
     box-sizing: border-box;
     background-color: rgba(255,255,255, 0.9);
-    width: 50%;
+    width: 60%;
     text-align: center;
     padding: 3%;
+    margin-left: 20%;
 }
 
 label.review {
@@ -84,7 +85,6 @@ label.review {
 /* set icon padding and size */
 .rating__label {
     cursor: pointer;
-    /* if you change the left/right padding, update the margin-right property of .rating__label--half as well. */
     padding: 5px;
     font-size: 30px;
 }
@@ -130,7 +130,7 @@ textarea {
     resize: none;
 }
 
-/* tags */
+/* tags in form */
 #tag{
     border: 2px solid #39566c;
     width: 30%;
@@ -208,10 +208,56 @@ textarea {
     color: white;
 }
 
+/* submit reiview button */
 #reviewbutton {
     width: 25%;
 }
 
 
+/* ----------------------------- VIEW REVIEW page ------------------------------*/
+/* single table of review on view review page */
+#singlereview{
+    margin: 4% 17%;
+    width: 65%;
+    background-color: rgba(255,255,255, 0.9);
+    border-radius: 10px;
+    border: none;
+    padding: 0;
+    padding: 3%;
+}
 
-
+td.reviewlabel{
+    font-size: larger;
+    width: 20%;
+}
+td.reviewcontent{
+    width: 80%;
+    font-size: larger;
+    text-align: left;
+    font-weight: normal;
+}
+/* hide rating value in table */
+.datarating{
+    display: none;
+}
+/* show rating as stars */
+.stars-outer {
+    display: inline-block;
+    position: relative;
+    font-family: FontAwesome;
+}
+.stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
+}
+.stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+.stars-inner::before {
+    content: "\f005 \f005 \f005 \f005 \f005";
+    color: #ff9800;
+}

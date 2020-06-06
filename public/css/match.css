@@ -1,13 +1,32 @@
 /* css for match page*/
 
+/* ------------------------------- MATCH page -------------------------------*/
+#matchicon{
+    float:left;
+    width:33.3%;
+    color:#333333;
+    box-sizing: border-box;
+    text-align: center;
+    height:400px;
+    padding-top: 10%;
+}
+/* write review icon on review page*/
+#icon.matchicon {
+    width: 50%;
+    height: 55%;
+    
+}
+
+/* ------------------------------- FIND MATCH page -------------------------------*/
 /* matching section on match page*/
 #matching {
     background-color: rgba(255,255,255, 0.9);
     text-align: center;
     box-sizing: border-box;
     padding: 3%;
-    width: 50%;
-    margin-left: 25%;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 8%;
 }
 
 p.comment {
@@ -15,18 +34,17 @@ p.comment {
 }
 
 
-/* The label availability in by availability section */
+/* label availability */
 .availability {
     display: inline;
     position: relative;
-    padding-right: 35px;
-    padding-left: 35px;
-    margin-bottom: 12px;
+    padding-right: 30px;
+    padding-left: 30px;
     cursor: pointer;
     font-size: 15px;
 }
 
-/* Hide the browser's default checkbox */
+/* hide default checkbox */
 .availability input {
     position: absolute;
     opacity: 0;
@@ -35,7 +53,7 @@ p.comment {
     width: 0;
 }
 
-/* Create a custom checkbox */
+/* create custom checkbox */
 .checkmark {
     position: absolute;
     display: inline-flex;
@@ -43,31 +61,32 @@ p.comment {
     height: 25px;
     width: 25px;
     background-color: #ccc;
+    
 }
 
-/* On mouse-over, add a grey background color */
+/* checkbox hover color */
 .availability:hover input ~ .checkmark {
     background-color: #9AB2B6;
 }
 
-/* When the checkbox is checked, add a blue background */
+/* checkbox checked color */
 .availability input:checked ~ .checkmark {
     background-color: #39566c;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
+/* create checkmark in checkbox after checked */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Show the checkmark when checked */
+/* show checkmark when checked */
 .availability input:checked ~ .checkmark:after {
     display: block;
 }
 
-/* Style the checkmark/indicator */
+/* checkmark */
 .availability .checkmark:after {
     left: 9px;
     top: 5px;
@@ -80,8 +99,9 @@ p.comment {
     transform: rotate(45deg);
 }
 
+/* cuisine selection */
 select.cuisine {
-    width: 30%;
+    width: 35%;
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -89,7 +109,7 @@ select.cuisine {
     color: #39566c;
     font-size: medium;
 }
-
+/* match button */
 #matchbutton{
     text-align: center;
     width: 25%;

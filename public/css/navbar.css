@@ -1,16 +1,24 @@
 /* css for navbar on most of pages*/
 
+/* navbar section*/
+#navbarsec{
+    width: 100%;
+    background-color: rgba(255,255,255, 0.6);
+    height: 8%;
+}
+
 /* home icon in navbar*/
 #homeicon{
     float: left;
-    width: 90%;
+    width: 10%;
     position: absolute;
-    top: 4%;
-    left: 6%;
+    text-align: center;
+    top: 1%;
+
 }
 .home{
-    width: 3%;
-    height: 5%;
+    width: 40%;
+    height: 50%;
 
 }
 
@@ -19,20 +27,21 @@
     float: right;
     width: 10%;
     position: absolute;
-    top: 4%;
+    top: 1%;
     right: 0.5%;
-
+    text-align: center;
 }
 .logout{
-    width: 30%;
-    height: 50%;
+    width: 40%;
+    height: 40%;
 }
 
 /* navbar */
 #navbar{
-    background-color:transparent;
     text-align: center;
-
+    float: left;
+    width: 100%;
+    top: 2%;
 }
 #navbar ul{
     padding: 0;
@@ -44,12 +53,12 @@
 #navbar a{
     color:#333333;
     text-decoration: none;
-    font-size:18px;
+    font-size:larger;
     padding-right:15px;
 }
 #navbar a:hover{
     color: lightcoral;
     text-decoration: none;
-    font-size:18px;
+    font-size:larger;
     padding-right:15px;
 }

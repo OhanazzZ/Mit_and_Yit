@@ -1,24 +1,22 @@
 extends layout
 
 block content
-    .container
-            section#homeicon
-                a(href='/home')
-                    img.home(src='/images/home.png', alt='home icon')
-                p Home
-            nav#navbar
-                .container
-                    ul
-                        li
-                            a(href='/user/profile') Profile&nbsp;
-                        li
-                            a(href='/match') Matching&nbsp;
-                        li
-                            a(href='/review') Review&nbsp;
-            section#logouticon
-                a(href='/user/logout')
-                    img.logout(src='/images/logout.png', alt='logout icon')
-                p Logout
+    .container#navbarsec
+        section#homeicon
+            a(href='/home')
+                img.home(src='/images/home.png', alt='home icon')
+        nav#navbar
+            ul
+                li
+                    a(href='/user/profile') Profile&nbsp;
+                li
+                    a(href='/match') Match&nbsp;
+                li
+                    a(href='/review') Review&nbsp;
+        section#logouticon
+            a(href='/user/logout')
+                img.logout(src='/images/logout.png', alt='logout icon')
+
 
     .container
         h1 Review

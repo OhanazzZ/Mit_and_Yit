@@ -16,44 +16,80 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     gender: {
-        type: String
-    },
-    cuisine: {
         type: String,
-        default: null
+        enum:["", "Male", "Female", "Other"]
     },
-    allergy: {
-        type: String,
-        default: null
+    dietary: {
+        cuisine: {
+            first: {
+                type: String,
+                enum:["", "American", "British", "Japanese", "Chinese", "Korean", "French", "Greek", "Mediterranean", "Indian", "Italian", "Mexican", "Thai", "Spanish"],
+                default: ""
+            },
+            second: {
+                type: String,
+                enum:["", "American", "British", "Japanese", "Chinese", "Korean", "French", "Greek", "Mediterranean", "Indian", "Italian", "Mexican", "Thai", "Spanish"],
+                default: ""
+            },
+            third: {
+                type: String,
+                enum:["", "American", "British", "Japanese", "Chinese", "Korean", "French", "Greek", "Mediterranean", "Indian", "Italian", "Mexican", "Thai", "Spanish"],
+                default: ""
+            }
+        },
+        allergy: {
+            type: String,
+            max: 30
+            
+        },
+        religion: {
+            type: String,
+            max: 30
+        }
     },
-    religion: {
-        type: String,
-        default: null
+    availability: {
+        lunch: {
+            type: String,
+            enum:["", "Yes", "No"],
+        },
+        dinner: {
+            type: String,
+            enum:["", "Yes", "No"],
+        },
+        coffee: {
+            type: String,
+            enum:["", "Yes", "No"],
+        }
     },
-    comment: {
-        type: String,
-        maxlength: 30
+    additional: {
+        academic: {
+            major: String,
+            level: Number,
+        },
+        hobbies: String,
+        career: String,
     },
-    lunch: String,
-    dinner: String,
-    coffee: String,
-    major: {
-        type:String,
-        default: null
-    },
-    level: Number,
-    hobbies: {
-        type:String,
-        default: null
-    },
-    career: {
-        type:String,
-        default: null
-    },
-    reviewid: {
-        type: String
-    }
+    review: [{
+        from: String,
+        rating: Number,
+        tag: [String],
+        comment:{
+            type: String,
+            max: 50
+        }
+    }],
+    request: [{
+        from:  String,
+        responded: String,
+        accepted: String
+    }],
+    history: [{
+        from:  String,
+        to:  String,
+        accepted: String,
+        beenOut: String
+    }]
 })
 
 const User = mongoose.model("user", userSchema, "user");
-module.exports = User;
+module.exports = User; 

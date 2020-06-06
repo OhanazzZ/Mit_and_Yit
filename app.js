@@ -7,25 +7,29 @@ const passport = require('passport');
 
 const app = express();
 
+
+/************************* middlewares *************************/
+
+// body parser middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 require('./models');
 
-//load view engine
+// load view engine
 app.set('views', path.join(__dirname,"views"));
 app.set('view engine', 'pug');
 
 app.use(express.static(path.join(__dirname,"public")));
 
-//Express Session Middleware
+// Express Session Middleware
 app.use(session({
     secret: 'keyboard cat',
     resave: true,
     saveUninitialized: true,
 }))
   
-//Express Messages Middleware
+// Express Messages Middleware
 app.use(require('connect-flash')());
 app.use(function (req, res, next) {
     res.locals.messages = require('express-messages')(req, res);
@@ -56,6 +60,9 @@ require('./config/passport')(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+
+/*************************** routing ***************************/
+
 // homepage (before login)
 app.get("/", (req, res) => {
     res.render('index');
@@ -82,14 +89,13 @@ app.use((req, res) => {
     res.status(404).send("Not found");
 });
 
-
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Mit & Yit is listening on port ${PORT}!`);
 });
 
 
-//Access Control
+// access control - unauthenticated users are prompted to log in
 function ensureAuthenticated(req, res, next) {
     if(req.isAuthenticated()){
         return next();

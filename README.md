@@ -67,7 +67,7 @@ There are three core functionalities, **user profile**, **matching system** and 
  | View Review | view_review.pug, review.css | /review/view | reviewControllers | Users.js
 
   ### Test
-  We tested the signup and login functions in our userController by using Chai, sinon and supertest packages. By create fake request and response variable, we have successfully pass the test which submits valid user information and invalie user infomation.
+  We tested the signup and login functions in our userController by using Chai, sinon and supertest packages. By create fake request and response variable, we have successfully pass the test which submits valid user information and invalid user infomation.
   To run the test of this project, simply type "npm test" in the termial, then you can see the message of test passing.
 
   ### Sample login details

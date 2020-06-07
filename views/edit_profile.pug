@@ -63,9 +63,10 @@ block content
                         option(value='French', selected = (user.dietary.cuisine.first == 'French')) French
                         option(value='Greek', selected = (user.dietary.cuisine.first == 'Greek')) Greek
                         option(value='Indian', selected = (user.dietary.cuisine.first == 'Indian')) Indian
-                        ption(value='Italian', selected = (user.dietary.cuisine.second == 'Italian')) Italian
+                        ption(value='Italian', selected = (user.dietary.cuisine.first == 'Italian')) Italian
                         option(value='Japanese', selected = (user.dietary.cuisine.first == 'Japanese')) Japanese
-                        ption(value='Korean', selected = (user.dietary.cuisine.second == 'Korean')) Korean
+                        ption(value='Korean', selected = (user.dietary.cuisine.first == 'Korean')) Korean
+                        ption(value='Mediterranean', selected = (user.dietary.cuisine.first == 'Mediterranean')) Mediterranean
                         option(value='Mexican', selected = (user.dietary.cuisine.first == 'Mexican')) Mexican
                         option(value='Spanish', selected = (user.dietary.cuisine.first == 'Spanish')) Spanish
                         option(value='Thai', selected = (user.dietary.cuisine.first == 'Thai')) Thai
@@ -82,6 +83,7 @@ block content
                         option(value='Italian', selected = (user.dietary.cuisine.second == 'Italian')) Italian
                         option(value='Japanese', selected = (user.dietary.cuisine.second == 'Japanese')) Japanese
                         ption(value='Korean', selected = (user.dietary.cuisine.second == 'Korean')) Korean
+                        ption(value='Mediterranean', selected = (user.dietary.cuisine.second == 'Mediterranean')) Mediterranean
                         option(value='Mexican', selected = (user.dietary.cuisine.second == 'Mexican')) Mexican
                         option(value='Spanish', selected = (user.dietary.cuisine.second == 'Spanish')) Spanish
                         option(value='Thai', selected = (user.dietary.cuisine.second == 'Thai')) Thai        
@@ -95,9 +97,10 @@ block content
                         option(value='French', selected = (user.dietary.cuisine.third == 'French')) French
                         option(value='Greek', selected = (user.dietary.cuisine.third == 'Greek')) Greek
                         option(value='Indian', selected = (user.dietary.cuisine.third == 'Indian')) Indian
-                        option(value='Italian', selected = (user.dietary.cuisine.second == 'Italian')) Italian
+                        option(value='Italian', selected = (user.dietary.cuisine.third == 'Italian')) Italian
                         option(value='Japanese', selected = (user.dietary.cuisine.third == 'Japanese')) Japanese
-                        ption(value='Korean', selected = (user.dietary.cuisine.second == 'Korean')) Korean
+                        ption(value='Korean', selected = (user.dietary.cuisine.third == 'Korean')) Korean
+                        ption(value='Mediterranean', selected = (user.dietary.cuisine.third == 'Mediterranean')) Mediterranean
                         option(value='Mexican', selected = (user.dietary.cuisine.third == 'Mexican')) Mexican
                         option(value='Spanish', selected = (user.dietary.cuisine.third == 'Spanish')) Spanish
                         option(value='Thai', selected = (user.dietary.cuisine.third == 'Thai')) Thai

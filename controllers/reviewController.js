@@ -50,7 +50,6 @@ const writeReview = async (req, res) => {
         }    
         
         const history = await User.findOne(check);
-        console.log(history);
         if (!history) {
             res.render('write_review', 
             {msg: "Sorry you are not eligible to write reviews for this user"})

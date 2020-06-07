@@ -35,6 +35,7 @@ const writeReview = async (req, res) => {
 
         const check = {
             $and: [
+                {"username": req.user.username},
                 {$or:[
                     {$and:[
                         {"history.from": req.user.username},
@@ -42,17 +43,14 @@ const writeReview = async (req, res) => {
                     ]},
                     {$and:[
                         {"history.to": req.user.username},
-                        {"history.from": req.body.userbane},
-                    ]},
-                    {$and:[
-                        {"username": req.user.username},
-                        {"username": req.body.userbane},
+                        {"history.from": req.body.username},
                     ]},
                 ]}
             ]
         }    
         
         const history = await User.findOne(check);
+        console.log(history);
         if (!history) {
             res.render('write_review', 
             {msg: "Sorry you are not eligible to write reviews for this user"})

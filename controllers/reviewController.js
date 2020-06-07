@@ -1,95 +1,114 @@
 const mongoose = require("mongoose");
 const User = mongoose.model("user");
-var expressValidator = require('express-validator');
-const passport = require('passport');
+const FAILURE = 0;
+const SUCCESS = 1;
 
+/*************************** load pages ****************************/
+
+// GET request - load root page
 const reviewRender = async (req, res) => {
     res.render('review');
 };
 
+// GET request - view reviews written by other users
+const viewRender = async (req, res) => {
+    const review = req.user.review;
+    if (review[0]===undefined) {
+        res.render('view_review', {
+            empty: "you don't have reviews from other users yet",
+            reviews: review
+        });
+    } else {
+        res.render('view_review', {
+            reviews: review
+        });
+    }
+};
+
+// GET request - load write review page
 const writeRender = async (req, res) => {
     res.render('write_review');
 };
 
+
+/*************************** write review ***************************/
 const writeReview = async (req, res) => {
 
+    const errors = [];
+    if (!req.body.username) {
+        errors.push({param: 'username', msg: 'Username is required', value: ''});
+    }
+    if (!req.body.rating) {
+        errors.push({param: 'rating', msg: 'Rating is required', value: ''});
+    }
+    if (!req.body.tag) {
+        errors.push({param: 'tag', msg: 'Tag is required', value: ''});
+    }
+
+    if (errors.length != 0){
+        res.render('write_review', { errors: errors});
+        return;
+    }
+
+    // make sure the review receiver is valid
+    if (checkValidReviewReceiver(req,res) != SUCCESS){
+        return;
+    }
+
     try{
-        req.checkBody("username", "Please input the user you want to review").notEmpty()
-        req.checkBody("rating", "Please rate the user you want to review").notEmpty()
-        req.checkBody("tag", "Please choose a tag for the user you want to review").notEmpty()
-
-        let errors = req.validationErrors();
-        if(errors){
-            res.render('write_review', { errors: errors});
-            return;
+        const review = {
+            from: req.user.username,
+            rating: req.body.rating,
+            tag: req.body.tag,
+            comment: req.body.comment,
         }
-
-        const check = {
-            $and: [
-                {$or:[
-                    {$and:[
-                        {"history.from": req.user.username},
-                        {"history.to": req.body.username},
-                    ]},
-                    {$and:[
-                        {"history.to": req.user.username},
-                        {"history.from": req.body.userbane},
-                    ]},
-                    {$and:[
-                        {"username": req.user.username},
-                        {"username": req.body.userbane},
-                    ]},
-                ]}
-            ]
-        }    
-        
-        const history = await User.findOne(check);
-        console.log(history);
-        if (!history) {
-            res.render('write_review', {msg: "Sorry you are not eligible to write reviews for this user"})
-            return
-        } else {
-            const review = {
-                from: req.user.username,
-                rating: req.body.rating,
-                tag: req.body.tag,
-                comment: req.body.comment,
-            }
-            await User.updateOne({"username": req.body.username}, {$push: {"review": review}});
-            res.render('write_review', {msg: "You have successfully write a review, another one?"})
-            return
-        } 
+        await User.updateOne(
+            {"username": req.body.username},
+            {$push: {"review": review}});
+        res.render('write_review', {
+            msg: "You have successfully written a review."})
+        return
     } catch(err) {
         console.log(err);
         res.send("Database query failed");
     }
-
 }
 
-const viewRender = async (req, res) => {
-    const review = req.user.review;
-    if (review[0]===undefined) {
-        res.render('view_review', {empty: "Currently you don't have reviews from other users", reviews: review});
-    } else {
-        res.render('view_review', {reviews: review});
-    }
-};
+/************************* helper function *************************/
 
-//Access Control
-function ensureAuthenticated(req, res, next) {
-    if(req.isAuthenticated()){
-        return next();
-    } else {
-        res.render('index', {
-            msg: "Please register or login"
+// the receiver has to have a match history with the writer
+// and has to be a user of the app
+const checkValidReviewReceiver = (req,res) =>{
+    const query = {$and: [
+        {$or: [
+            {$and: [
+                {"history.from": req.user.username},
+                {"history.to": req.body.username},
+            ]},
+            {$and: [
+                {"history.to": req.user.username},
+                {"history.from": req.body.userbane},
+            ]},
+            {$and: [
+                {"username": req.user.username},
+                {"username": req.body.userbane},
+            ]},
+        ]}
+    ]} 
+    const exist = User.findOne(query);
+    if (!exist) {
+        res.render('write_review', {
+            msg: "you are not friend with this user."
         })
+        return FAILURE;
     }
+    return SUCCESS;
 }
+
 
 module.exports = {
     reviewRender,
     writeRender,
     viewRender,
     writeReview,
-    ensureAuthenticated
 };

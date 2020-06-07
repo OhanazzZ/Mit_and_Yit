@@ -94,6 +94,7 @@ app.listen(PORT, () => {
     console.log(`Mit & Yit is listening on port ${PORT}!`);
 });
 
+module.exports = app;
 
 // access control - unauthenticated users are prompted to log in
 function ensureAuthenticated(req, res, next) {

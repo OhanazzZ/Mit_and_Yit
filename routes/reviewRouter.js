@@ -1,14 +1,19 @@
-const express = require('express');
+const express = require("express");
 const reviewRouter = express.Router();
 const reviewController = require("../controllers/reviewController.js");
+const ensureAuthenticated = require("../helperFunctions");
 
-reviewRouter.get("/", reviewController.ensureAuthenticated, reviewController.reviewRender);
+// load root page for review
+reviewRouter.get('/', ensureAuthenticated, reviewController.reviewRender);
 
-reviewRouter.get("/write", reviewController.ensureAuthenticated, reviewController.writeRender);
-reviewRouter.post("/write", reviewController.ensureAuthenticated, reviewController.writeReview);
+// view reviews written by other users
+reviewRouter.get('/view', ensureAuthenticated, reviewController.viewRender);
 
-reviewRouter.get("/view", reviewController.ensureAuthenticated, reviewController.viewRender);
+// load the page for writing reviews
+reviewRouter.get('/write', ensureAuthenticated, reviewController.writeRender);
 
+// allow the user to write a review
+reviewRouter.post('/write', ensureAuthenticated, reviewController.writeReview);
 
 
 module.exports = reviewRouter;

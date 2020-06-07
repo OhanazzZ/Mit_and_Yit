@@ -16,11 +16,11 @@ const signupRender = async (req, res) => {
 // POST request - allow sign up
 const signup = async (req, res) => {
 
-    // check (and handle) any error in user input
+     // check (and handle) any error in user input
     if (formValidation(req, res, "signup") == ERROR){
         return;
     }
-    
+
     // get user input from http request and prepare it to be stored
     const userdata = getUserData(req, "signup");
     const user = new User();
@@ -60,7 +60,7 @@ const login = async (req, res, next) => {
     // check (and handle) any error in user input
     if (formValidation(req, res, "login") == ERROR){
         return;
-    }
+    } 
 
     const username = req.body.username;
     const password = req.body.password;
@@ -153,24 +153,39 @@ function ensureAuthenticated(req, res, next) {
     }
 }
 
-// check validity of user input and handle the error
+//check validity of user input and handler the error
 const formValidation = (req, res, purpose, user = null)=>{
+    const errors = [];
+    const email = /\S+@\S+\.\S+/;
     if (purpose == "login"){
-        req.checkBody('username', 'Username is required').notEmpty();
-        req.checkBody('password', 'Password is required').notEmpty();
+        if (!req.body.username) {
+            errors.push({param: 'username', msg: 'Username is required', value: ''});
+        }
+        if (!req.body.password) {
+            errors.push({param: 'password', msg: 'Password is required', value: ''});
+        }
     } else if (["signup", "editProfile"].includes(purpose)){
-        req.checkBody('username', 'Username is required').notEmpty();
-        req.checkBody('email', 'Email is required').notEmpty();
-        req.checkBody('email', 'Email is not valid').isEmail();
-        req.checkBody('password', 'Minimum length is 6 characters').isLength({min:6});
-        req.checkBody('password2', 'Passwords don\'t matched.').equals(req.body.password);
+        if (!req.body.username) {
+            errors.push({param: 'username', msg: 'Username is required', value: ''});
+        }
+        if (!req.body.email) {
+            errors.push({ param: 'email', msg: 'Email is required', value: '' });
+        } 
+        if (!email.test(String(req.body.email).toLowerCase) === false) {
+            errors.push({ param: 'email', msg: 'Email is not valid', value: '' });
+        }
+        if (req.body.password.length < 6) {
+            errors.push({param: 'password', msg: 'Minimum length of password is 6 characters', value: ''});
+        }
+        if (req.body.password != req.body.password2) {
+            errors.push({param: 'password2', msg: 'Passwords not match', value: ''});
+        }
     } else{
         console.log("double check your code!");
         return ERROR;
     }
     
-    const errors = req.validationErrors();
-    if(errors){
+    if(errors.length != 0){
         if (purpose == "login"){
             res.render('login', {errors: errors});
             return ERROR;
@@ -184,6 +199,7 @@ const formValidation = (req, res, purpose, user = null)=>{
     }
     return NO_ERROR;
 }
+
 
 // get user input from http request
 const getUserData = (req, purpose = "signup")=>{
@@ -229,5 +245,6 @@ module.exports = {
     editprofileRender,
     editProfile,
     logout,
-    ensureAuthenticated
+    ensureAuthenticated,
+    formValidation
 };

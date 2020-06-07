@@ -17,6 +17,7 @@ The web app we are creating is a **social dining platform**, with the goal to **
 | Match Finding            | Match like-minded users based on availability, food preference and other criteria |  /match  |
 | Review Posting           | Allow users to write and update review; reviews are linked to user profiles        |  /review | 
 
+For Deliverable 3, the first functionality has been implemented
 
 ### Catalogue
 * [Final Deliverable](#Final-Deliverable)
@@ -25,46 +26,7 @@ The web app we are creating is a **social dining platform**, with the goal to **
 
 
 ## Final Deliverable
-There are three core functionalities, **user profile**, **matching system** and **review system**, have been implemented to our application.
-
-### 1. Users' information system
-This allows users to register into database and sign in with existing accounts. Users can view and make changes on their personl profile.
-
-URLs
-
-| Functionality            | Views             | Routes  | Controllers | models
-| :----------------------- | :---------------  | :------ | :------ | :------ 
-| Register | signup.pug, profile.css | /user/signup | userControllers | Users.js
-| Login | login.pug, login.css | /user/login | userControllers | Users.js
-| Logout |  | /user/logout | userControllers | Users.js
-| View Profile | profile.pug, profile.css | /user/profile | userControllers | Users.js
-| Edit Profile | edit_profile.pug, profile.css | /user/edit | userControllers | Users.js
-
-
-### 2. Matching system
-This allows users to find matching user by availibilty and cuisine perference. Users are able to send requests to interested users, manage all received requests and check matching history.
-
-URLs
-
-| Functionality            | Views             | Routes  | Controllers | models
-| :----------------------- | :---------------  | :------ | :------ | :------ 
-| Find Match | match_find.pug, match_result.pug, match.css, match_result.css | /match/find, /match/result, /match/like | matchControllers | Users.js
-| Match History | match_history.pug, match_his_req.css | /match/history | matchControllers | Users.js
-| Match Request | match_request.pug, match_his_req.css | /match/request, /match/reject, /match/accept | matchControllers | Users.js
-
-### 3. Review system
-In this system, users can manage theirs reviews. Users can write reviews to matched users, as well as checking reviews about themselves from other users.
-
-URLs
-
-| Functionality            | Views             | Routes  | Controllers | models
-| :----------------------- | :---------------  | :------ | :------ | :------ 
-| Write Review | write_review.pug, review.css | /review/write | reviewControllers | Users.js
-| View Review | view_review.pug, review.css | /review/view | reviewControllers | Users.js
-
-### Test
-
-### Sample login details
+availabile after 07 June
 
 ## Deliverable 3:
 

@@ -1,22 +1,23 @@
 const express = require('express');
 const matchRouter = express.Router();
 const matchController = require("../controllers/matchController.js");
+const ensureAuthenticated = require("../helperFunctions");
 
+// load root page for match
+matchRouter.get('/', ensureAuthenticated, matchController.matchRender);
 
-matchRouter.get("/", matchController.ensureAuthenticated, matchController.matchRender);
+// load the page for match history, match request and the match finder
+matchRouter.get('/history', ensureAuthenticated, matchController.matchHistoryRender);
+matchRouter.get('/request', ensureAuthenticated, matchController.matchRequestRender);
+matchRouter.get('/find', ensureAuthenticated, matchController.matchFindRender);
 
-//receive match result, display result and when like button is clicked, send http request 
-matchRouter.post("/result", matchController.ensureAuthenticated, matchController.findMatch)
+// load match result
+matchRouter.post('/result', ensureAuthenticated, matchController.findMatch);
 
-matchRouter.get("/find", matchController.ensureAuthenticated, matchController.matchFindRender);
-
-matchRouter.get('/history', matchController.ensureAuthenticated, matchController.matchHistoryRender);
-
-matchRouter.get('/request', matchController.ensureAuthenticated, matchController.matchRequestRender);
-
-matchRouter.post('/like', matchController.ensureAuthenticated, matchController.matchRequest);
-matchRouter.post('/accept', matchController.ensureAuthenticated, matchController.requestAccept);
-matchRouter.post('/reject', matchController.ensureAuthenticated, matchController.requestReject);
-
+// send match request
+matchRouter.post('/like', ensureAuthenticated, matchController.matchRequest);
+// respond to match request
+matchRouter.post('/accept', ensureAuthenticated, matchController.requestAccept);
+matchRouter.post('/reject', ensureAuthenticated, matchController.requestReject);
 
 module.exports = matchRouter;   

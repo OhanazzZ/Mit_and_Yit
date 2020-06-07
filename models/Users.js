@@ -80,14 +80,14 @@ const userSchema = new mongoose.Schema({
     }],
     request: [{
         from:  String,
-        responded: String,
-        accepted: String
     }],
     history: [{
         from:  String,
         to:  String,
-        accepted: String,
-        beenOut: String
+        status: {
+            type: String,
+            enum:["Pending", "Accepted", "Declined"]
+        }
     }]
 })
 

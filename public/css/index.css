@@ -1,5 +1,15 @@
 /* css for index page*/
 
+/* introdution on index page*/
+#indexintro{
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    vertical-align: text-bottom;
+    margin-top: 5%;
+    margin-bottom: -3%;
+}
+
 /* register section on index page*/
 #register{
     float:left;
@@ -8,6 +18,8 @@
     box-sizing: border-box;
     text-align: center;
     padding: 10%;
+    vertical-align: middle;
+    margin:0;
 }
 /* register icon on index page*/
 #icon.register {
@@ -31,3 +43,4 @@
     height: 50%;
     color: #333333;
 }
+

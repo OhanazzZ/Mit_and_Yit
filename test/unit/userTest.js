@@ -32,13 +32,7 @@ describe('controllers unit test', () => {
         })
 
         await userController.signup(req, res);
-        const result = spy.lastCall.args;
-
         expect('Location','/login')
-
-        /* console.log(result[0] === check);
-        console.log(savedData);
-        console.log(spy.lastCall.args); */
     })
 
     it("signup--invalid user signup", async () => {
@@ -57,7 +51,6 @@ describe('controllers unit test', () => {
         };
 
         await userController.signup(req, res);
-        const result = spy.lastCall.args;
         expect('Location','/signup')
     })
 

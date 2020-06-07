@@ -21,6 +21,7 @@ The web app we are creating is a **social dining platform**, with the goal to **
 The link to Git repository for the web application is https://github.com/GilfoylePP/Mit_and_Yit--INFO30005.  
 The URL to the live website is https://mityit.herokuapp.com.  
 The commit id is **f8089ce**.
+
 There are three core functionalities, **user profile**, **matching system** and **review system**, have been implemented to our application.
 
 
@@ -36,6 +37,7 @@ There are three core functionalities, **user profile**, **matching system** and 
  This allows users to register into database, sign in with existing accounts and sign out from the application. Users can view and make changes on their personl profiles.
 
   URLs:
+  
   https://mityit.herokuapp.com
   
   https://mityit.herokuapp.com/home
@@ -62,7 +64,8 @@ There are three core functionalities, **user profile**, **matching system** and 
   ### 2. Matching system
  This allows users to match like-minded users based on availability, food preference and other criteria. Users are able to send requests to interested users, manage all received requests and check matching history.
 
-  URLs
+  URLs：
+  
   https://mityit.herokuapp.com/match
   
   https://mityit.herokuapp.com/match/find
@@ -83,7 +86,8 @@ There are three core functionalities, **user profile**, **matching system** and 
   ### 3. Review system
  In this system, users can manage theirs reviews. Users can write reviews to matched users, as well as checking reviews about themselves from other users.
 
-  URLs
+  URLs：
+  
   https://mityit.herokuapp.com/review
   
   https://mityit.herokuapp.com/review/write

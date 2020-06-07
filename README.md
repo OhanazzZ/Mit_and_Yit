@@ -71,9 +71,10 @@ There are three core functionalities, **user profile**, **matching system** and 
   To run the test of this project, simply type "npm test" in the termial, then you can see the message of test passing.
 
   ### Sample login details
-  Below is sample login details of one of our account.
-  username: Abigail; password: qwqwqw
-  By entering the above informmation, you can login our app, view the personal information and all the matching histories, matching requests and reviews.
+    Below is sample login details of one of our account.
+    Username: Abigail; password: qwqwqw
+    By entering the above informmation, you can login our app, view the personal information and all the matching histories, matching requests and reviews.
+
 
 ## Deliverable 3:
 

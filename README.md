@@ -17,8 +17,8 @@ The web app we are creating is a **social dining platform**, with the goal to **
 
 
 ## Final Deliverable
-commit id: f8089ce
 There are three core functionalities, **user profile**, **matching system** and **review system**, have been implemented to our application.
+
 
 ### Core Functionalities and routes
 | Functionality            | Features          | route   |

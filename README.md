@@ -38,7 +38,7 @@ There are three core functionalities, **user profile**, **matching system** and 
  | Home | home.pug, home.css | /home | app.js | Users.js
  | Register | signup.pug, profile.css | /user/signup | userControllers | Users.js
  | Login | login.pug, login.css | /user/login | userControllers | Users.js
- | Logout |  | /user/logout | userControllers | Users.js
+ | Logout | back to welcome page | /user/logout | userControllers | Users.js
  | View Profile | profile.pug, profile.css | /user/profile | userControllers | Users.js
  | Edit Profile | edit_profile.pug, profile.css | /user/edit | userControllers | Users.js
 
@@ -51,9 +51,9 @@ There are three core functionalities, **user profile**, **matching system** and 
   | Functionality            | Views             | Routes  | Controllers | Models
  | :----------------------- | :---------------  | :------ | :------ | :------ 
  | Match | match.pug, match.css | /match | matchControllers | Users.js
- | Find Match | match_find.pug, match_result.pug, match.css, match_result.css | /match/find, /match/result, /match/like | matchControllers | Users.js
+ | Find Match | match_find.pug, match_result.pug, match.css, match_result.css | /match/find, /match/result| matchControllers | Users.js
  | Match History | match_history.pug, match_his_req.css | /match/history | matchControllers | Users.js
- | Match Request | match_request.pug, match_his_req.css | /match/request, /match/reject, /match/accept | matchControllers | Users.js
+ | Match Request | match_request.pug, match_his_req.css | /match/request | matchControllers | Users.js
 
   ### 3. Review system
  In this system, users can manage theirs reviews. Users can write reviews to matched users, as well as checking reviews about themselves from other users.
@@ -67,9 +67,13 @@ There are three core functionalities, **user profile**, **matching system** and 
  | View Review | view_review.pug, review.css | /review/view | reviewControllers | Users.js
 
   ### Test
-  We tested the signup and login functions in our userController by using Chai, 
+  We tested the signup and login functions in our userController by using Chai, sinon and supertest packages. By create fake request and response variable, we have successfully pass the test which submits valid user information and invalie user infomation.
+  To run the test of this project, simply type "npm test" in the termial, then you can see the message of test passing.
 
   ### Sample login details
+  Below is sample login details of one of our account.
+  username: Abigail; password: qwqwqw
+  By entering the above informmation, you can login our app, view the personal information and all the matching histories, matching requests and reviews.
 
 ## Deliverable 3:
 

@@ -1,13 +1,5 @@
 # Welcome to Mit & Yit
 
-We are in the **Monday 2 pm** workshop.
- 
-| Member      | ID     |
-| :---------- | :----- |
-| Kechen Zhao | 957398 |
-| Bin Zhang   | 895427 |
-| Yuan Ye     | 980728 | 
-
 The web app we are creating is a **social dining platform**, with the goal to **help people connect over food**!
 
 ### Catalogue
